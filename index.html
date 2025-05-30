@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Shioko</title>
+  <link rel="stylesheet" href="style.css" />
+  <script defer src="script.js"></script>
+</head>
+<body>
+  <header>
+  <h1 id="titulo">CLUB SALIDiTOS</h1>
+</header>
+
+  <main>
+    <section id="inicio" class="visible">
+      <!-- Submenú fijo arriba -->
+      <div class="subnav">
+        <button class="active" data-target="noticias" onclick="showSubsection('noticias')">Noticias</button>
+        <button data-target="clubs" onclick="showSubsection('clubs')">Clubs</button>
+        <button data-target="reglamento" onclick="showSubsection('reglamento')">Reglamento</button>
+      </div>
+      <!-- Contenedores de subsecciones -->
+       <div id="noticias" class="subsection visible">
+    <div class="carrusel-noticias" id="carruselNoticias">
+
+      <!-- NOTICIA 1 (más reciente) -->
+      <div class="noticia-slide">
+        <div class="noticia-card">
+          <span class="noticia-fecha">28 mayo 2025</span>
+          <h3>Gran final de la liga</h3>
+          <img src="imagenes/vive.jpeg" alt="Final Liga">
+          <p>La temporada llega a su fin con una emocionante final entre los líderes. El estadio vibró con los goles y la emoción de los fanáticos que no dejaron de alentar a sus equipos.</p>
+        </div>
+      </div>
+
+      <!-- NOTICIA 2 -->
+      <div class="noticia-slide">
+        <div class="noticia-card">
+          <span class="noticia-fecha">20 mayo 2025</span>
+          <h3>Reunión de presidentes</h3>
+          <img src="imagenes/copa.png" alt="Reunión">
+          <p>Los representantes de los clubes se reunieron para discutir nuevas reglas que afectarán directamente la temporada siguiente. Se espera un cambio en la reglamentación del VAR y de los tiempos suplementarios.</p>
+        </div>
+      </div>
+
+
+
+      <div class="noticia-slide">
+        <div class="noticia-card">
+          <span class="noticia-fecha">20 mayo 2025</span>
+          <h3>Reunión de presidentes</h3>
+          <img src="imagenes/supercopa.png" alt="Reunión">
+          <p>Los representantes de los clubes se reunieron para discutir nuevas reglas que afectarán directamente la temporada siguiente. Se espera un cambio en la reglamentació.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Imagen expandida -->
+  <div class="image-overlay" id="imageOverlay">
+    <img id="expandedImage" src="" alt="Imagen ampliada">
+  </div>
+      </div>
+      <div id="clubs" class="subsection hidden">
+        <div class="club-grid">
+          <!-- Escudos flotantes -->
+          <button onclick="showClubInfo('presidente')"><img src="imagenes/presi.jpeg" alt="Presidente"></button>
+          <button onclick="showClubInfo('club1')"><img src="imagenes/escudo berti.jpeg" alt="Club 1"></button>
+          <button onclick="showClubInfo('club2')"><img src="imagenes/choco.jpeg" alt="Club 2"></button>
+          <button onclick="showClubInfo('club3')"><img src="imagenes/cabra.jpeg" alt="Club 3"></button>
+          <button onclick="showClubInfo('club4')"><img src="imagenes/retro.jpeg" alt="Club 4"></button>
+          <button onclick="showClubInfo('club5')"><img src="imagenes/bufandas.jpeg" alt="Club 5"></button>
+          <button onclick="showClubInfo('club6')"><img src="imagenes/vive.jpeg" alt="Club 6"></button>
+          <button onclick="showClubInfo('club7')"><img src="imagenes/Verdes.jpeg" alt="Club 7"></button>
+          <button onclick="showClubInfo('club8')"><img src="imagenes/Monos.jpeg" alt="Club 8"></button>
+          <button onclick="showClubInfo('club9')"><img src="imagenes/dabe.png" alt="Club 9"></button>
+          <button onclick="showClubInfo('club10')"><img src="imagenes/correas.jpeg" alt="Club 10"></button>
+          <button onclick="showClubInfo('club11')"><img src="imagenes/flemin.jpeg" alt="Club 11"></button>
+        </div>
+
+        <!-- Fichas individuales -->
+        <div id="club-info">
+          <div class="club-card hidden" id="presidente">
+            <h3>Presidente de la Liga</h3>
+            <img src="presidente.png" alt="Presidente">
+            <p><strong>Nombre:</strong> Don Conejo</p>
+            <p><strong>Historia:</strong> Fundador de la liga en 2020...</p>
+            <p><strong>Títulos:</strong> Coordinador general</p>
+          </div>
+
+          <div class="club-card hidden" id="club1">
+            <h3>Club 1</h3>
+            <img src="club1.png" alt="Club 1">
+            <p><strong>Presidente:</strong> Nombre 1</p>
+            <p><strong>Historia:</strong> Club fundado en...</p>
+            <p><strong>Títulos:</strong> 3 ligas, 1 copa</p>
+          </div>
+
+          <!-- Repetir para club2 a club11 -->
+        </div>
+      </div>
+      <div id="reglamento" class="subsection hidden">
+        <h2>Reglamento</h2>
+        <p>Reglamento actualizado.</p>
+      </div>
+      </div>
+    </section>
+
+    <section id="liga" class="hidden">
+      <h2>Liga</h2>
+
+<!-- Tabs (visual, no funcional) -->
+<div class="liga-tabs">
+  <div class="liga-tab">Jornadas</div>
+</div>
+
+<!-- Contenedor scroll horizontal -->
+<div class="liga-container" id="ligaSwipe">
+  <!-- === Sección Jornadas === -->
+  <div class="liga-section">
+    <div class="jornada-menu">
+      <button onclick="selectJornada(1)">J1</button>
+      <button onclick="selectJornada(2)">J2</button>
+      <button onclick="selectJornada(3)">J3</button>
+      <button onclick="selectJornada(4)">J4</button>
+      <button onclick="selectJornada(5)">J5</button>
+      <button onclick="selectJornada(6)">J6</button>
+      <button onclick="selectJornada(7)">J7</button>
+      <button onclick="selectJornada(8)">J8</button>
+      <button onclick="selectJornada(9)">J9</button>
+      <button onclick="selectJornada(10)">J10</button>
+      <button onclick="selectJornada(11)">J11</button>
+      <button onclick="selectJornada(12)">J12</button>
+      <button onclick="selectJornada(13)">J13</button>
+      <button onclick="selectJornada(14)">J14</button>
+      <button onclick="selectJornada(15)">J15</button>
+      <button onclick="selectJornada(16)">J16</button>
+
+    </div>
+
+    <div class="jornada-content">
+      <div class="jornada visible" id="jornada-1">
+
+        <h3 class="tituloJ">Jornada 1</h3>
+
+        <div class="matchday">
+
+          <!-- Partido 1 -->
+          <div class="match">
+            <div class="teams">
+              <div class="team">
+                <div class="team-details">
+                  <img src="imagenes/cabra.jpeg" alt="Club A Escudo" />
+                  <div class="team-name">Club A</div>
+                </div>
+                <div class="score-inline">69</div>
+              </div>
+              <div class="team">
+                <div class="team-details">
+                  <img src="imagenes/vive.jpeg" alt="Club B Escudo" />
+                  <div class="team-name">Club B</div>
+                </div>
+                <div class="score-inline">65</div>
+              </div>
+            </div>
+          </div>
+
+
+          <!-- Partido 2 -->
+          <div class="match">
+            <div class="teams">
+              <div class="team">
+                <div class="team-details">
+                  <img src="imagenes/retro.jpeg" alt="Club A Escudo" />
+                  <div class="team-name">LA RETROVISONETA</div>
+                </div>
+                <div class="score-inline">33</div>
+              </div>
+              <div class="team">
+                <div class="team-details">
+                  <img src="imagenes/escudo berti.jpeg" alt="Club B Escudo" />
+                  <div class="team-name">ALBERTWIN</div>
+                </div>
+                <div class="score-inline">1M</div>
+              </div>
+            </div>
+          </div>
+
+
+          <!-- Partido 3 -->
+          <div class="match">
+            <div class="teams">
+              <div class="team">
+                <div class="team-details">
+                  <img src="imagenes/verdes.jpeg" alt="Club A Escudo" />
+                  <div class="team-name"></div>Verdes Bremen
+                </div>
+                <div class="score-inline">420</div>
+              </div>
+              <div class="team">
+                <div class="team-details">
+                  <img src="imagenes/Monos.jpeg" alt="Club B Escudo" />
+                  <div class="team-name">MONOS FC</div>
+                </div>
+                <div class="score-inline">3</div>
+              </div>
+            </div>
+          </div>
+
+
+          <!-- Partido 4 -->
+          <div class="match">
+            <div class="teams">
+              <div class="team">
+                <div class="team-details">
+                  <img src="imagenes/flemin.jpeg" alt="Club A Escudo" />
+                  <div class="team-name">FLEMINGO</div>
+                </div>
+                <div class="score-inline">93</div>
+              </div>
+              <div class="team">
+                <div class="team-details">
+                  <img src="imagenes/correas.jpeg" alt="Club B Escudo" />
+                  <div class="team-name">Correas SAD</div>
+                </div>
+                <div class="score-inline">69</div>
+              </div>
+            </div>
+          </div>
+
+
+          <!-- Partido 5 -->
+          <div class="match">
+            <div class="teams">
+              <div class="team">
+                <div class="team-details">
+                  <img src="imagenes/choco.jpeg" alt="Club A Escudo" />
+                  <div class="team-name">Shiokolatikohs UD</div>
+                </div>
+                <div class="score-inline">0</div>
+              </div>
+              <div class="team">
+                <div class="team-details">
+                  <img src="imagenes/bufandas.jpeg" alt="Club B Escudo" />
+                  <div class="team-name">Bufandas FC</div>
+                </div>
+                <div class="score-inline">Oblak</div>
+              </div>
+            </div>
+          </div>
+          
+        </div>
+      </div>
+
+
+
+
+      <div class="jornada hidden" id="jornada-2">
+        <h3>Jornada 2</h3>
+        <p>Club A 1 - 2 Club C</p>
+
+        </div>
+      </div>
+    </div>
+
+       
+            
+    </section>
+    <section id="copa" class="hidden"><h2>Copa</h2></section>
+    <section id="supercopa" class="hidden"><h2>Supercopa</h2></section>
+    <section id="champions" class="hidden"><h2>Champions</h2></section>
+  </main>
+
+  <footer><p>&copy; 2025 Saliditos Club</p></footer>
+
+  <!-- === Burbuja fija del conejo === -->
+  <div class="burbuja-conejo" onclick="toggleFloatingMenu()">
+    <img src="imagenes/conejo.png" alt="Mr. Bunny">
+  </div>
+
+  <!-- === Menú flotante de burbujas de iconos === -->
+  <div class="menu-flotante hidden" id="menuFlotante">
+    <button onclick="goTo('inicio')" aria-label="Inicio"><img src="imagenes/inicio.png" alt="Inicio" style="width: 45px; height: 45px;"/></button>
+    <button onclick="goTo('liga')" aria-label="Liga" ><img src="imagenes/liga.png" alt="Liga" style="width: 45px; height: 45px;" /></button>
+    <button onclick="goTo('copa')" aria-label="Copa"><img src="imagenes/copa.png" alt="Copa" style="width: 40px; height: 40px;"/></button>
+    <button onclick="goTo('supercopa')" aria-label="Supercopa"><img src="imagenes/supercopa.png" alt="Supercopa" style="width: 40px; height: 40px;"/></button>
+    <button onclick="goTo('champions')" aria-label="Champions"><img src="imagenes/champions.png" alt="Champions" style="width: 45px; height: 45px;"/></button>
+  </div>
+</body>
+</html>

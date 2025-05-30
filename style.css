@@ -1,0 +1,558 @@
+:root {
+  --azul: #2C3E50;
+  --magenta: #E91E63;
+  --gradiente: linear-gradient(135deg, var(--azul), var(--magenta));
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', sans-serif;
+  margin: 0;
+  padding: 0;
+  background: #f0f2f5;
+  color: #222;
+}
+
+
+
+
+
+header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 10vh; /* altura ajustada para móvil */
+  background: #f9f9fb;
+  padding: 0 1rem;
+}
+
+#titulo {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-weight: 900;
+  font-size: clamp(2rem, 6vw, 4rem);
+  color: transparent;
+  position: relative;
+  -webkit-text-stroke: 2px transparent;
+  text-stroke: 2px transparent;
+
+  background: linear-gradient(270deg,
+  #003366,
+  #b20059,
+  #003366,
+  #b20059);
+  background-size: 400% 400%;
+  -webkit-background-clip: text;
+  background-clip: text;
+
+  animation: gradientMove 50s linear infinite;
+  cursor: pointer;
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
+  touch-action: manipulation;
+}
+
+@keyframes gradientMove {
+  0% {
+    background-position: 0% 50%;
+  }
+  100% {
+    background-position: 400% 50%;
+  }
+}
+
+.acelerado {
+  animation-duration: 35s !important;
+}
+
+
+
+
+
+
+section {
+  padding: 1em;
+}
+
+.hidden {
+  display: none !important;
+}
+
+.visible {
+  display: block !important;
+}
+
+footer {
+  text-align: center;
+  padding: 1em;
+  background: #ddd;
+}
+
+/* --- Submenú dentro de "inicio" --- */
+.subnav {
+  position: sticky;
+  top: 0;
+  background: white;
+  display: flex;
+  overflow-x: auto;
+  border-bottom: 2px solid var(--magenta);
+  z-index: 10;
+}
+
+.subnav button {
+  flex: 1 0 auto;
+  padding: 0.75em;
+  background: transparent;
+  border: none;
+  font-size: 1em;
+  color: var(--azul);
+  transition: background 0.2s, color 0.2s;
+}
+
+.subnav button:not(.active):hover {
+  background: rgba(233,30,99,0.1);
+}
+
+.subnav button:active {
+  background: var(--magenta);
+  color: white;
+}
+
+.subnav button.active {
+  border-bottom: 3px solid var(--magenta);
+  color: var(--magenta);
+}
+
+/* Ocultar/mostrar subsecciones */
+.subsection.hidden {
+  display: none;
+}
+
+.subsection.visible {
+  display: block;
+}
+
+/* Burbuja fija del conejo */
+.burbuja-conejo {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 65px;
+  height: 65px;
+  background: var(--gradiente);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+  cursor: pointer;
+  z-index: 1000;
+}
+
+.burbuja-conejo img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+}
+
+/* Menú flotante de iconos */
+.menu-flotante {
+  position: fixed;
+  bottom: 90px;
+  right: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  z-index: 999;
+}
+
+.menu-flotante button {
+  width: 50px;
+  height: 50px;
+  background: var(--gradiente);
+  border: none;
+  border-radius: 50%;
+  color: white;
+  font-size: 1.3em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.menu-flotante button:hover {
+  transform: scale(1.1);
+}
+
+
+
+
+
+
+
+
+.club-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1em;
+  margin-top: 1em;
+}
+
+.club-grid button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.club-grid img {
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+  border-radius: 8px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+}
+
+.club-grid button:hover img,
+.club-grid button:focus img,
+.club-grid button:active img {
+  transform: scale(1.1);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+#club-info {
+  margin-top: 2em;
+}
+
+.club-card {
+  background: white;
+  padding: 1em;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  text-align: center;
+  max-width: 400px;
+  margin: 1em auto;
+  transition: transform 0.3s;
+}
+
+.club-card img {
+  width: 120px;
+  height: 120px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 1em;
+}
+
+
+
+
+
+ #noticias {
+      position: relative;
+    }
+
+    .carrusel-noticias {
+      scroll-snap-type: y mandatory;
+      overflow-y: scroll;
+      height: 100vh;
+      -webkit-overflow-scrolling: touch;
+    }
+
+    .carrusel-noticias::-webkit-scrollbar {
+      display: none;
+    }
+
+    .noticia-slide {
+      height: 100vh;
+      scroll-snap-align: start;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 1em;
+    }
+
+    .noticia-card {
+      background: #fff;
+      border-radius: 20px;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+      max-width: 600px;
+      width: 100%;
+      padding: 1.5em;
+      transform: translateY(30px);
+      opacity: 0;
+      transition: all 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+      position: relative;
+    }
+
+    .noticia-card.visible {
+      transform: translateY(0);
+      opacity: 1;
+    }
+
+    .noticia-card img {
+      width: 100%;
+      border-radius: 16px;
+      margin: 1em 0;
+      cursor: zoom-in;
+      transition: transform 0.3s ease;
+    }
+
+    .noticia-card h3 {
+      font-size: 1.6em;
+      margin: 0.4em 0;
+      color: var(--azul);
+      transition: transform 0.5s ease, opacity 0.5s ease;
+    }
+
+    .noticia-card p {
+      font-size: 1em;
+      color: var(--texto);
+      line-height: 1.6;
+      transition: transform 0.6s ease, opacity 0.6s ease;
+    }
+
+    .noticia-fecha {
+      font-size: 0.9em;
+      color: var(--gris);
+    }
+
+    /* Estilo de la imagen expandida */
+    .image-overlay {
+      position: fixed;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: rgba(0, 0, 0, 0.9);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 9999;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.4s ease;
+    }
+
+    .image-overlay.active {
+      opacity: 1;
+      pointer-events: all;
+    }
+
+    .image-overlay img {
+      max-width: 90vw;
+      max-height: 90vh;
+      border-radius: 12px;
+      box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
+      cursor: zoom-out;
+      transition: transform 0.4s ease;
+    }
+
+    /* Animaciones del contenido al entrar */
+    .noticia-card.visible h3,
+    .noticia-card.visible p {
+      transform: translateY(0);
+      opacity: 1;
+    }
+
+    .noticia-card h3,
+    .noticia-card p {
+      transform: translateY(20px);
+      opacity: 0;
+    }
+
+    /* Colores temáticos */
+    .noticia-card h3 {
+      color: linear-gradient(to right, var(--azul), var(--magenta));
+    }
+
+    /* Botón de cierre si deseas agregarlo opcionalmente */
+    .image-overlay::after {
+      content: '✕';
+      position: absolute;
+      top: 1em;
+      right: 1em;
+      font-size: 2em;
+      color: white;
+      cursor: pointer;
+      font-weight: bold;
+    }
+
+
+
+
+
+
+.liga-tabs {
+  display: flex;
+  justify-content: space-around;
+  background: white;
+  border-radius: 12px;
+  margin: 1em auto;
+  padding: 0.5em;
+  max-width: 400px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+  font-weight: bold;
+  color: var(--azul);
+}
+
+/* Swipe horizontal entre Jornadas y Clasificación */
+.liga-container {
+  display: flex;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+  gap: 1em;
+  scroll-behavior: smooth;
+}
+
+.liga-section {
+  flex: 0 0 100%;
+  scroll-snap-align: start;
+  padding: 1em;
+  transition: transform 0.3s ease-in-out;
+}
+
+/* Jornadas */
+.jornada-menu {
+  display: flex;
+  gap: 0.5em;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-bottom: 1em;
+}
+
+.jornada-menu button {
+  background: var(--gradiente);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 0.3em 0.7em;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.jornada-menu button:hover {
+  background: #c2185b;
+}
+
+.jornada-content .jornada {
+  display: none;
+}
+
+.jornada.visible {
+  display: block;
+}
+
+/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ .tituloJ {
+    text-align: center;
+    font-weight: 700;
+    font-size: 1.8rem;
+    margin-bottom: 25px;
+    color: #1f2937;
+  }
+
+  .matchday {
+    max-width: 600px;
+    margin: 0 auto;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 6px 18px rgb(0 0 0 / 0.1);
+    padding: 2px 3px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .match {
+    display: flex;
+    flex-direction: column;
+    background: #F8F1FE;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgb(96 165 250 / 0.15);
+    padding: 12px 16px;
+    cursor: pointer;
+    transition: all 0.4s ease;
+  }
+
+  .match.active {
+    background: linear-gradient(135deg, #a5b4fc 0%, #f0abfc 100%);
+    transform: scale(1.03);
+  }
+
+  .teams {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+  }
+
+  .team {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    justify-content: space-between;
+  }
+
+  .team img {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    object-fit: contain;
+    border: 1.8px solid #cbd5e1;
+    background: white;
+    flex-shrink: 0;
+  }
+
+  .team-details {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    flex-grow: 1;
+  }
+
+  .team-name {
+    font-weight: 600;
+    font-size: 1rem;
+    color: #334155;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .score-inline {
+    font-weight: 700;
+    font-size: 1.4rem;
+    color: #111827;
+    background: #EAD2E5;
+    padding: 5px 14px;
+    border-radius: 12px;
+    min-width: 42px;
+    text-align: center;
+    user-select: none;
+    flex-shrink: 0;
+  }
+
+  @media (max-width: 480px) {
+    .matchday {
+      max-width: 100%;
+      padding: 15px 20px;
+    }
+  }
