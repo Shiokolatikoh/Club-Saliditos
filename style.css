@@ -94,7 +94,7 @@ footer {
 }
 
 /*----------------------------------------------------
-  5. SUBMENÚ MEJORADO (Noticias / Clubs / Reglamento)
+  5. SUBMENÚ (Noticias / Clubs / Reglamento)
 ----------------------------------------------------*/
 /* Contenedor del submenú */
 .subnav {
@@ -104,7 +104,7 @@ footer {
   background: linear-gradient(90deg, #e66465, #9198e5);
   padding: 0.5rem 1rem;
   border-radius: 1.5rem;
-  margin: 1rem auto 0;       /* Más cercano al header */
+  margin: 0rem auto 0;       /* Más cercano al header */
   width: 90%;
   max-width: 600px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
@@ -303,11 +303,13 @@ footer {
 }
 
 .carrusel-noticias {
-  scroll-snap-type: y mandatory;
-  overflow-y: scroll;
-  height: 100vh;
+  /* scroll-snap-type: y mandatory; */
+  /* overflow-y: scroll; */ 
+  /* height: 100vh; */ 
+  padding-bottom: 4em; /* ajusta según el tamaño de tu footer */
+  min-height: 100vh;     
   -webkit-overflow-scrolling: touch;
-  scrollbar-width: none; /* oculta scrollbar en Firefox */
+  scrollbar-width: none;
 }
 
 .carrusel-noticias::-webkit-scrollbar {
@@ -315,7 +317,7 @@ footer {
 }
 
 .noticia-slide {
-  height: 100vh;
+  padding: 1em 0;
   scroll-snap-align: start;
   display: flex;
   align-items: center;
@@ -482,29 +484,33 @@ footer {
 
 /*----------------------------------------------------
   11. JORNADAS: MENÚ (BOTONES) y CONTENIDO DE PARTIDOS
+     (Ahora en grid de 2 filas x 8 columnas)
 -----------------------------------------------------*/
 .jornada-menu {
-  display: flex;
-  gap: 0.5em;
-  overflow-x: auto; /* scroll horizontal */
-  white-space: nowrap; /* para que no salte de línea */
+  display: grid;
+  grid-template-columns: repeat(8, 1fr);
+  gap: 0.5rem;
   padding: 0.5em 0;
-  justify-content: flex-start;
 }
 
 .jornada-menu button {
-  flex: 0 0 auto;
   background: var(--gradiente);
   color: white;
   border: none;
   border-radius: 8px;
-  padding: 0.3em 0.7em;
+  padding: 0.8em; /* Mayor tamaño para mejor accesibilidad */
+  font-size: 1rem; /* Texto un poco más grande */
   cursor: pointer;
-  transition: background 0.2s;
+  transition: background 0.2s, transform 0.2s;
+  text-align: center;
 }
 
 .jornada-menu button:hover {
   background: #c2185b;
+}
+
+.jornada-menu button:active {
+  transform: scale(0.97);
 }
 
 .jornada-content .jornada {
