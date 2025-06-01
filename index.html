@@ -6,12 +6,13 @@
     <title>Shioko - CLUB SALIDiTOS</title>
     <!-- ----------------------------------------------------
          Enlace al CSS (estilos base + sección Clubs mejorada
-         + ajustes tabla de clasificación + submenú rediseñado)
+         + ajustes tabla de clasificación + submenú rediseñado
+         + ajustes de jornada en Liga)
          ---------------------------------------------------- -->
     <link rel="stylesheet" href="style.css" />
     <!-- ----------------------------------------------------
          Carga del JavaScript (interacciones generales + Clubs
-         + swipe para submenú + otros comportamientos)
+         + swipe para submenú + swipe para Liga + otros comportamientos)
          ---------------------------------------------------- -->
     <script defer src="script.js"></script>
   </head>
@@ -33,20 +34,9 @@
              ahora rediseñado y más integrado con el header)
              --------------------------------------------- -->
         <div class="subnav">
-          <button
-            class="active"
-            data-target="noticias"
-          >
-            Noticias
-          </button>
-          <button data-target="clubs">
-            Clubs
-          </button>
-          <button
-            data-target="reglamento"
-          >
-            Reglamento
-          </button>
+          <button class="active" data-target="noticias">Noticias</button>
+          <button data-target="clubs">Clubs</button>
+          <button data-target="reglamento">Reglamento</button>
         </div>
 
         <!-- ======================
@@ -64,11 +54,7 @@
               <div class="noticia-card">
                 <span class="noticia-fecha">28 mayo 2025</span>
                 <h3>Gran final de la liga</h3>
-                <img
-                  src="imagenes/vive.jpeg"
-                  alt="Final Liga"
-                  loading="lazy"
-                />
+                <img src="imagenes/vive.jpeg" alt="Final Liga" loading="lazy" />
                 <p>
                   La temporada llega a su fin con una emocionante final entre los
                   líderes. El estadio vibró con los goles y la emoción de los
@@ -82,11 +68,7 @@
               <div class="noticia-card">
                 <span class="noticia-fecha">20 mayo 2025</span>
                 <h3>Reunión de presidentes</h3>
-                <img
-                  src="imagenes/copa.png"
-                  alt="Reunión"
-                  loading="lazy"
-                />
+                <img src="imagenes/copa.png" alt="Reunión" loading="lazy" />
                 <p>
                   Los representantes de los clubes se reunieron para discutir
                   nuevas reglas que afectarán directamente la temporada siguiente.
@@ -101,11 +83,7 @@
               <div class="noticia-card">
                 <span class="noticia-fecha">20 mayo 2025</span>
                 <h3>Reunión de presidentes</h3>
-                <img
-                  src="imagenes/supercopa.png"
-                  alt="Reunión"
-                  loading="lazy"
-                />
+                <img src="imagenes/supercopa.png" alt="Reunión" loading="lazy" />
                 <p>
                   Los representantes de los clubes se reunieron para discutir
                   nuevas reglas que afectarán directamente la temporada siguiente.
@@ -159,9 +137,13 @@
           <div class="liga-tab" data-target="clasificacion">Clasificación</div>
         </div>
 
-        <div class="liga-container">
+        <div class="liga-container" id="ligaContainer">
           <!-- Pestaña Jornadas -->
           <div class="liga-section visible" id="jornadas">
+            <!-- 
+              Ajuste: Grid para botones J1–J8 en la primera fila 
+              y J9–J16 en segunda fila (sin scroll horizontal)
+            -->
             <div class="jornada-menu">
               <button onclick="selectJornada(1)">J1</button>
               <button onclick="selectJornada(2)">J2</button>
@@ -190,20 +172,14 @@
                     <div class="teams">
                       <div class="team">
                         <div class="team-details">
-                          <img
-                            src="imagenes/cabra.jpeg"
-                            alt="Club A Escudo"
-                          />
+                          <img src="imagenes/cabra.jpeg" alt="Club A Escudo" />
                           <div class="team-name">Lambs United</div>
                         </div>
                         <div class="score-inline">69</div>
                       </div>
                       <div class="team">
                         <div class="team-details">
-                          <img
-                            src="imagenes/vive.jpeg"
-                            alt="Club B Escudo"
-                          />
+                          <img src="imagenes/vive.jpeg" alt="Club B Escudo" />
                           <div class="team-name">Vive Cluj</div>
                         </div>
                         <div class="score-inline"></div>
@@ -216,10 +192,7 @@
                     <div class="teams">
                       <div class="team">
                         <div class="team-details">
-                          <img
-                            src="imagenes/retro.jpeg"
-                            alt="Club A Escudo"
-                          />
+                          <img src="imagenes/retro.jpeg" alt="Club A Escudo" />
                           <div class="team-name">Retrovisoneta</div>
                         </div>
                         <div class="score-inline">33</div>
@@ -242,20 +215,14 @@
                     <div class="teams">
                       <div class="team">
                         <div class="team-details">
-                          <img
-                            src="imagenes/verdes.jpeg"
-                            alt="Club A Escudo"
-                          />
+                          <img src="imagenes/verdes.jpeg" alt="Club A Escudo" />
                           <div class="team-name">Verdes Bremen</div>
                         </div>
                         <div class="score-inline">24</div>
                       </div>
                       <div class="team">
                         <div class="team-details">
-                          <img
-                            src="imagenes/Monos.jpeg"
-                            alt="Club B Escudo"
-                          />
+                          <img src="imagenes/Monos.jpeg" alt="Club B Escudo" />
                           <div class="team-name">Monos FC</div>
                         </div>
                         <div class="score-inline">7</div>
@@ -268,20 +235,14 @@
                     <div class="teams">
                       <div class="team">
                         <div class="team-details">
-                          <img
-                            src="imagenes/flemin.jpeg"
-                            alt="Club A Escudo"
-                          />
+                          <img src="imagenes/flemin.jpeg" alt="Club A Escudo" />
                           <div class="team-name">Flemingo</div>
                         </div>
                         <div class="score-inline">99</div>
                       </div>
                       <div class="team">
                         <div class="team-details">
-                          <img
-                            src="imagenes/correas.jpeg"
-                            alt="Club B Escudo"
-                          />
+                          <img src="imagenes/correas.jpeg" alt="Club B Escudo" />
                           <div class="team-name">Correas SAD</div>
                         </div>
                         <div class="score-inline">69</div>
@@ -294,20 +255,14 @@
                     <div class="teams">
                       <div class="team">
                         <div class="team-details">
-                          <img
-                            src="imagenes/choco.jpeg"
-                            alt="Club A Escudo"
-                          />
+                          <img src="imagenes/choco.jpeg" alt="Club A Escudo" />
                           <div class="team-name">Shiokolatikohs UD</div>
                         </div>
                         <div class="score-inline">0</div>
                       </div>
                       <div class="team">
                         <div class="team-details">
-                          <img
-                            src="imagenes/bufandas.jpeg"
-                            alt="Club B Escudo"
-                          />
+                          <img src="imagenes/bufandas.jpeg" alt="Club B Escudo" />
                           <div class="team-name">Bufandas FC</div>
                         </div>
                         <div class="score-inline">1</div>
