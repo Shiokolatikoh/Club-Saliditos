@@ -20,7 +20,7 @@ body {
   font-family: 'Segoe UI', sans-serif;
   margin: 0;
   padding: 0;
-  background: #f0f2f5;
+  background: white;
   color: var(--texto);
 }
 
@@ -76,7 +76,7 @@ header {
   4. SECCIONES, VISIBILIDAD Y FOOTER
 -----------------------------------------------------*/
 section {
-  padding: 1em;
+  padding: 0em;
 }
 
 .hidden {
@@ -89,7 +89,7 @@ section {
 
 footer {
   text-align: center;
-  padding: 1em;
+  padding: 0.5em;
   background: #ddd;
 }
 
@@ -97,18 +97,21 @@ footer {
   5. SUBMENÚ (Noticias / Clubs / Reglamento)
 ----------------------------------------------------*/
 /* Contenedor del submenú */
+/* Ahora ocupa todo el ancho, está pegado al header y es sticky */
 .subnav {
   display: flex;
   justify-content: center;
   gap: 1rem;
   background: linear-gradient(90deg, #e66465, #9198e5);
   padding: 0.5rem 1rem;
-  border-radius: 1.5rem;
-  margin: 0rem auto 0;       /* Más cercano al header */
-  width: 90%;
-  max-width: 600px;
+  /* Se elimina el border-radius para que ocupe todo el ancho */
+  border-radius: 0;
+  /* Se asegura ancho completo */
+  width: 100%;
+  max-width: none;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-  position: relative;
+  position: sticky;
+  top: 0; /* Queda pegado al tope de la pantalla, justo bajo el header */
   z-index: 2;
   transition: all 0.3s ease-in-out;
 }
@@ -209,14 +212,15 @@ footer {
 /*----------------------------------------------------
   7. GRID DE “ESCUDOS” DE CLUBS
 -----------------------------------------------------*/
+/* Se elimina la limitación de altura y el overflow interno
+   para que el scroll sea sólo el de la página principal */
 .clubs-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
   gap: 1rem;
   padding: 2rem;
   background-color: #f7f7f7;
-  height: 100vh;       /* Ocupa toda la altura del viewport */
-  overflow-y: auto;    /* Scroll vertical si hay muchos escudos */
+  /* Eliminado: height: 100vh; overflow-y: auto; */
 }
 
 .club-img {
@@ -253,7 +257,7 @@ footer {
 }
 
 .club-card-content {
-  background: white;
+  /* background: white; */
   border-radius: 16px;
   padding: 2rem;
   max-width: 600px;
@@ -322,7 +326,7 @@ footer {
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 0.2em;
+  padding: 0.2em 0;
 }
 
 .noticia-card {
@@ -483,14 +487,20 @@ footer {
 }
 
 /*----------------------------------------------------
-  11. JORNADAS: MENÚ (BOTONES) y CONTENIDO DE PARTIDOS
-     (Ahora en grid de 2 filas x 8 columnas)
+  11. JORNADAS: TÍTULO Y MENÚ (BOTONES) + CONTENIDO DE PARTIDOS
+     (Ahora oculto el menú hasta hacer clic en el título)
 -----------------------------------------------------*/
+/* Ocultar menú de jornada hasta que se añada la clase "show" */
 .jornada-menu {
-  display: grid;
-  grid-template-columns: repeat(8, 1fr);
+  display: none;
+  grid-template-columns: repeat(4, 1fr);
   gap: 0.5rem;
   padding: 0.5em 0;
+}
+
+/* Cuando tenga la clase .show, se muestra en grid */
+.jornada-menu.show {
+  display: grid;
 }
 
 .jornada-menu button {
@@ -522,11 +532,19 @@ footer {
 }
 
 .tituloJ {
+  font-family: 'Segoe UI', sans-serif;
+  font-weight: 800;
+  font-size: clamp(2rem, 5vw, 2.5rem);
+
+  background: linear-gradient(90deg, var(--magenta), var(--azul));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+
+  display: block;
   text-align: center;
-  font-weight: 700;
-  font-size: 1.8rem;
-  margin-bottom: 25px;
-  color: #1f2937;
+  margin: 0.3rem 0;
+  cursor: pointer;
 }
 
 .matchday {
@@ -545,7 +563,7 @@ footer {
 .match {
   display: flex;
   flex-direction: column;
-  background: #F8F1FE;
+  background: #EBEBEB;
   border-radius: 12px;
   box-shadow: 0 2px 8px rgba(96, 165, 250, 0.15);
   padding: 8px 12px;
@@ -601,7 +619,7 @@ footer {
   font-weight: 700;
   font-size: 1.4rem;
   color: #111827;
-  background: #EAD2E5;
+  background: #E2ECFF;
   padding: 5px 14px;
   border-radius: 12px;
   min-width: 42px;
