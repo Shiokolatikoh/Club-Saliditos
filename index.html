@@ -31,7 +31,7 @@
       <section id="inicio" class="visible">
         <!-- ---------------------------------------------
              Submenú “Noticias / Clubs / Reglamento” (sticky,
-             ahora rediseñado y más integrado con el header)
+             ahora ocupa todo el ancho y pegado al header)
              --------------------------------------------- -->
         <div class="subnav">
           <button class="active" data-target="noticias">Noticias</button>
@@ -130,7 +130,7 @@
            Sección “Liga” (pestañas Jornadas / Clasificación)
            ====================== -->
       <section id="liga" class="hidden">
-        <h2>Liga</h2>
+        <h2> Saliditos League </h2>
         <!-- Pestañas para alternar entre Jornadas y Clasificación -->
         <div class="liga-tabs">
           <div class="liga-tab active" data-target="jornadas">Jornadas</div>
@@ -141,10 +141,11 @@
           <!-- Pestaña Jornadas -->
           <div class="liga-section visible" id="jornadas">
             <!-- 
-              Ajuste: Grid para botones J1–J8 en la primera fila 
-              y J9–J16 en segunda fila (sin scroll horizontal)
+              Ajuste: ocultaremos el menú de botones por defecto
+              y lo desplegaremos al hacer clic en el título.
             -->
-            <div class="jornada-menu">
+            <h3 class="tituloJ">Jornada 1</h3>
+            <div class="jornada-menu" id="jornadaMenu">
               <button onclick="selectJornada(1)">J1</button>
               <button onclick="selectJornada(2)">J2</button>
               <button onclick="selectJornada(3)">J3</button>
@@ -165,7 +166,6 @@
 
             <div class="jornada-content">
               <div class="jornada visible" id="jornada-1">
-                <h3 class="tituloJ">Jornada 1</h3>
                 <div class="matchday">
                   <!-- Partido 1 -->
                   <div class="match" tabindex="0">
@@ -182,7 +182,7 @@
                           <img src="imagenes/vive.jpeg" alt="Club B Escudo" />
                           <div class="team-name">Vive Cluj</div>
                         </div>
-                        <div class="score-inline"></div>
+                        <div class="score-inline">66</div>
                       </div>
                     </div>
                   </div>
@@ -218,7 +218,7 @@
                           <img src="imagenes/verdes.jpeg" alt="Club A Escudo" />
                           <div class="team-name">Verdes Bremen</div>
                         </div>
-                        <div class="score-inline">24</div>
+                        <div class="score-inline">4</div>
                       </div>
                       <div class="team">
                         <div class="team-details">
@@ -274,7 +274,7 @@
 
               <!-- Ejemplo Jornada 2 -->
               <div class="jornada hidden" id="jornada-2">
-                <h3 class="tituloJ">Jornada 2</h3>
+                <h3>Jornada 2</h3>
                 <p>Club A 1 - 2 Club C</p>
               </div>
             </div>
