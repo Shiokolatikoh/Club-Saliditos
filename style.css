@@ -89,7 +89,325 @@ section {
 
 footer {
   text-align: center;
-  padding: 0.5em;
+  padding: 1em;
+  background: #ddd;
+}
+
+/*----------------------------------------------------
+  5. SUBMENÚ (Noticias / Clubs / Reglamento)
+----------------------------------------------------*/
+/* Contenedor del submenú */
+/* Ahora ocupa todo el ancho, está pegado al header y es sticky */
+.subnav {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  background: linear-gradient(90deg, #e66465, #9198e5);
+  padding: 0.5rem 1rem;
+  /* Se elimina el border-radius para que ocupe todo el ancho */
+  border-radius: 0;
+  /* Se asegura ancho completo */
+  width: 100%;
+  max-width: none;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  position: sticky;
+  top: 0; /* Queda pegado al tope de la pantalla, justo bajo el header */
+  z-index: 2;
+  transition: all 0.3s ease-in-out;
+}
+
+/* Botones del submenú */
+.subnav button {
+  flex: 1;
+  padding: 0.6rem 0.8rem;
+  border: none;
+  background: transparent;
+  color: #fff;
+  font-weight: bold;
+  border-radius: 1rem;
+  font-size: 1rem;
+  transition: background 0.3s, transform 0.2s;
+  cursor: pointer;
+}
+
+/* Botón activo */
+.subnav button.active {
+  background-color: rgba(255, 255, 255, 0.3);
+  transform: scale(1.05);
+  backdrop-filter: blur(6px);
+}
+
+/* Responsive para móviles pequeños */
+@media (max-width: 480px) {
+  .subnav {
+    gap: 0.5rem;
+    padding: 0.4rem 0.8rem;
+  }
+  .subnav button {
+    font-size: 0.9rem;
+    padding: 0.5rem;
+  }
+}
+
+/*----------------------------------------------------
+  6. BURBUJA FIJA Y MENÚ FLOTANTE
+-----------------------------------------------------*/
+.burbuja-conejo {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 65px;
+  height: 65px;
+  background: var(--gradiente);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  cursor: pointer;
+  z-index: 1000;
+}
+
+.burbuja-conejo img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+}
+
+/* Ocultar menú flotante por defecto */
+.menu-flotante.hidden {
+  display: none;
+}
+
+.menu-flotante {
+  position: fixed;
+  bottom: 90px; /* encima de la burbuja */
+  right: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  z-index: 999;
+}
+
+.menu-flotante button {
+  width: 50px;
+  height: 50px;
+  background: var(--gradiente);
+  border: none;
+  border-radius: 50%;
+  color: white;
+  font-size: 1.3em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.menu-flotante button:hover {
+  transform: scale(1.1);
+}
+
+/*----------------------------------------------------
+  7. GRID DE “ESCUDOS” DE CLUBS
+-----------------------------------------------------*/
+/* Se elimina la limitación de altura y el overflow interno
+   para que el scroll sea sólo el de la página principal */
+.clubs-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* EXACTAMENTE 3 columnas */
+  gap: 1rem;
+  padding: 1rem;              /* Reducido para que quepan 3 columnas sin scroll */
+  background-color: #f7f7f7;
+  width: 100%;               /* Ocupa todo el ancho disponible */
+  box-sizing: border-box;    /* Asegura que padding no produzca scroll extra */
+}
+
+/* Contenedor individual de cada club (escudo + texto) */
+.club-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Ajustar la imagen del escudo para que ocupe el 100 % del contenedor y mantenga proporción */
+.club-item .club-img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  object-fit: cover;
+}
+
+/* Nombre del presidente (texto debajo del escudo) */
+.club-presidente {
+  margin-top: 0.5rem;
+  font-size: 0.9rem;
+  color: var(--texto);
+  text-align: center;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  width: 100%;
+}
+
+.club-img {
+  width: 100%;
+  height: auto;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.club-img:hover {
+  transform: scale(1.05);
+}
+
+/*----------------------------------------------------
+  8. ESTILOS DEL OVERLAY Y TARJETA DE CLUB (FULLSCREEN)
+-----------------------------------------------------*/
+.club-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.club-overlay.hidden {
+  display: none !important;
+}
+
+.club-card-content {
+  /* background: white; */
+  border-radius: 16px;
+  padding: 2rem;
+  max-width: 600px;
+  width: 90%;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+  animation: fadeInUp 0.5s ease;
+  text-align: center;
+  position: relative;
+}
+
+.club-card-content h3 {
+  margin-top: 0;
+  color: var(--azul);
+}
+
+.club-card-content img {
+  width: 100px;
+  margin: 1rem auto;
+  display: block;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.club-card-content p {
+  font-size: 1rem;
+  color: var(--texto);
+  line-height: 1.5;
+  margin: 0.5rem 0;
+}
+
+@keyframes fadeInUp {/*----------------------------------------------------
+  1. VARIABLES GLOBALES (colores, gradientes y tipografía)
+-----------------------------------------------------*/
+:root {
+  --azul: #2C3E50;
+  --magenta: #E91E63;
+  --gris: #6B7280;        /* Para fechas, subtítulos, etc. */
+  --texto: #334155;       /* Para párrafos */
+  --gradiente: linear-gradient(135deg, var(--azul), var(--magenta));
+}
+
+/*----------------------------------------------------
+  2. RESET BÁSICO Y ESTILOS BASE
+-----------------------------------------------------*/
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', sans-serif;
+  margin: 0;
+  padding: 0;
+  background: white;
+  color: var(--texto);
+}
+
+/*----------------------------------------------------
+  3. HEADER Y TÍTULO ANIMADO
+-----------------------------------------------------*/
+header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 10vh; /* 10% de la altura del viewport */
+  background: #f9f9fb;
+  padding: 0 1rem;
+}
+
+#titulo {
+  font-weight: 900;
+  /* clamp(min, ideal, max) para escalar en móviles: mínimo 2rem, máximo 4rem */
+  font-size: clamp(2rem, 6vw, 4rem);
+  color: transparent;
+  background: linear-gradient(
+    270deg,
+    #003366,
+    #b20059,
+    #003366,
+    #b20059
+  );
+  background-size: 400% 400%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  animation: gradientMove 50s linear infinite;
+  cursor: pointer;
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
+  touch-action: manipulation;
+}
+
+@keyframes gradientMove {
+  0% {
+    background-position: 0% 50%;
+  }
+  100% {
+    background-position: 400% 50%;
+  }
+}
+
+/* Clase para acelerar la animación */
+.acelerado {
+  animation-duration: 35s !important;
+}
+
+/*----------------------------------------------------
+  4. SECCIONES, VISIBILIDAD Y FOOTER
+-----------------------------------------------------*/
+section {
+  padding: 0em;
+}
+
+.hidden {
+  display: none !important;
+}
+
+.visible {
+  display: block !important;
+}
+
+footer {
+  text-align: center;
+  padding: 1em;
   background: #ddd;
 }
 
@@ -310,7 +628,539 @@ footer {
   /* scroll-snap-type: y mandatory; */
   /* overflow-y: scroll; */ 
   /* height: 100vh; */ 
-  padding-bottom: 4em; /* ajusta según el tamaño de tu footer */
+  padding-bottom: 0.5em; /* ajusta según el tamaño de tu footer */
+  min-height: 100vh;     
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+}
+
+.carrusel-noticias::-webkit-scrollbar {
+  display: none;
+}
+
+.noticia-slide {
+  padding: 1em 0;
+  scroll-snap-align: start;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.2em 0;
+}
+
+.noticia-card {
+  background: #fff;
+  border-radius: 20px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+  max-width: 600px;
+  width: 100%;
+  padding: 1.5em;
+  transform: translateY(30px);
+  opacity: 0;
+  transition: all 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+  position: relative;
+}
+
+.noticia-card.visible {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+.noticia-card img {
+  width: 100%;
+  border-radius: 16px;
+  margin: 1em 0;
+  cursor: zoom-in;
+  transition: transform 0.3s ease;
+}
+
+.noticia-card h3 {
+  font-size: 1.6em;
+  margin: 0.4em 0;
+  background: linear-gradient(to right, var(--azul), var(--magenta));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  transition: transform 0.5s ease, opacity 0.5s ease;
+}
+
+.noticia-card p {
+  font-size: 1em;
+  color: var(--texto);
+  line-height: 1.6;
+  transition: transform 0.6s ease, opacity 0.6s ease;
+}
+
+.noticia-fecha {
+  font-size: 0.9em;
+  color: var(--gris);
+}
+
+.image-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.9);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.4s ease;
+}
+
+.image-overlay.active {
+  opacity: 1;
+  pointer-events: all;
+}
+
+.image-overlay img {
+  max-width: 90vw;
+  max-height: 90vh;
+  border-radius: 12px;
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
+  cursor: zoom-out;
+  transition: transform 0.4s ease;
+}
+
+.noticia-card.visible h3,
+.noticia-card.visible p {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+.noticia-card h3,
+.noticia-card p {
+  transform: translateY(20px);
+  opacity: 0;
+}
+
+.image-overlay::after {
+  content: '✕';
+  position: absolute;
+  top: 1em;
+  right: 1em;
+  font-size: 2em;
+  color: white;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+/*----------------------------------------------------
+  10. PESTAÑAS “Liga” (Jornadas / Clasificación)
+-----------------------------------------------------*/
+.liga-tabs {
+  width: 100%;
+  max-width: 400px; /* en pantallas grandes no excede 400px */
+  margin: 1em auto;
+  display: flex;
+  justify-content: space-around;
+  background: white;
+  border-radius: 12px;
+  padding: 0.5em;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  font-weight: bold;
+  color: var(--azul);
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.liga-tab {
+  flex: 1;
+  text-align: center;
+  padding: 0.6em 0;
+  border-radius: 10px;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  background: transparent;
+}
+
+.liga-tab.active {
+  background: linear-gradient(135deg, var(--magenta), var(--azul));
+  color: white;
+  box-shadow: 0 0 10px var(--azul);
+}
+
+.liga-section {
+  display: none;
+  padding: 1em;
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+.liga-section.visible {
+  display: block;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/*----------------------------------------------------
+  11. JORNADAS: TÍTULO Y MENÚ (BOTONES) + CONTENIDO DE PARTIDOS
+     (Ahora oculto el menú hasta hacer clic en el título)
+-----------------------------------------------------*/
+/* Ocultar menú de jornada hasta que se añada la clase "show" */
+.jornada-menu {
+  display: none;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0.5rem;
+  padding: 0.5em 0;
+}
+
+/* Cuando tenga la clase .show, se muestra en grid */
+.jornada-menu.show {
+  display: grid;
+}
+
+.jornada-menu button {
+  background: var(--gradiente);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 0.8em; /* Mayor tamaño para mejor accesibilidad */
+  font-size: 1rem; /* Texto un poco más grande */
+  cursor: pointer;
+  transition: background 0.2s, transform 0.2s;
+  text-align: center;
+}
+
+.jornada-menu button:hover {
+  background: #c2185b;
+}
+
+.jornada-menu button:active {
+  transform: scale(0.97);
+}
+
+.jornada-content .jornada {
+  display: none;
+}
+
+.jornada.visible {
+  display: block;
+}
+
+.tituloJ {
+  font-family: 'Segoe UI', sans-serif;
+  font-weight: 800;
+  font-size: clamp(2rem, 5vw, 2.5rem);
+
+  background: linear-gradient(90deg, var(--magenta), var(--azul));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+
+  display: block;
+  text-align: center;
+  margin: 0.3rem 0;
+  cursor: pointer;
+}
+
+.matchday {
+  width: 100%;
+  max-width: 400px; /* en pantallas grandes no expande más allá */
+  margin: 0 auto;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+  padding: 1em;
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+}
+
+.match {
+  display: flex;
+  flex-direction: column;
+  background: #EBEBEB;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(96, 165, 250, 0.15);
+  padding: 8px 12px;
+  cursor: pointer;
+  transition: all 0.4s ease;
+}
+
+.match.active {
+  background: linear-gradient(135deg, #a5b4fc 0%, #f0abfc 100%);
+  transform: scale(1.03);
+}
+
+.teams {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.team {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  justify-content: space-between;
+}
+
+.team img {
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  object-fit: contain;
+  border: 1.8px solid #cbd5e1;
+  background: white;
+  flex-shrink: 0;
+}
+
+.team-details {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-grow: 1;
+}
+
+.team-name {
+  font-weight: 600;
+  font-size: 1rem;
+  color: #334155;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.score-inline {
+  font-weight: 700;
+  font-size: 1.4rem;
+  color: #111827;
+  background: #E2ECFF;
+  padding: 5px 14px;
+  border-radius: 12px;
+  min-width: 42px;
+  text-align: center;
+  user-select: none;
+  flex-shrink: 0;
+}
+
+/*----------------------------------------------------
+  12. MEDIA QUERIES ADICIONALES
+-----------------------------------------------------*/
+/* A) Para pantallas muy estrechas (<360px) */
+@media (max-width: 360px) {
+  body {
+    font-size: 14px;
+  }
+  .noticia-card h3 {
+    font-size: 1.3rem;
+  }
+  .noticia-card p {
+    font-size: 0.9rem;
+  }
+  .burbuja-conejo {
+    bottom: 15px;
+    right: 15px;
+    width: 60px;
+    height: 60px;
+  }
+  .burbuja-conejo img {
+    width: 45px;
+    height: 45px;
+  }
+  .menu-flotante {
+    bottom: 75px;
+    right: 15px;
+    gap: 8px;
+  }
+  .menu-flotante button {
+    width: 45px;
+    height: 45px;
+  }
+  /* Ajustes para la tabla en móviles muy estrechos */
+  .tabla-clasificacion th,
+  .tabla-clasificacion td {
+    font-size: 0.8rem;
+    padding: 0.4rem 0.5rem;
+  }
+  .escudo {
+    width: 28px;
+    height: 28px;
+  }
+  .ultimo {
+    width: 8px;
+    height: 8px;
+    margin: 0 1px;
+  }
+}
+
+/* B) Para pantallas medianas (≥600px), ajustar alineamiento de equipos */
+@media (min-width: 600px) {
+  .teams {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  .team img {
+    width: 60px;
+    height: 60px;
+  }
+  .team-name {
+    font-size: 1.1rem;
+  }
+  .score-inline {
+    font-size: 1.6rem;
+    padding: 6px 16px;
+  }
+}
+
+/*----------------------------------------------------
+  13. CONTENEDOR Y TABLA DE CLASIFICACIÓN
+-----------------------------------------------------*/
+.clasificacion-container {
+  overflow-x: auto;      /* Permite scroll horizontal en móvil */
+  padding: 0.5rem;       /* Pequeño padding para que el table no quede pegado al borde */
+}
+
+.tabla-clasificacion {
+  width: 100%;
+  min-width: 600px;      /* Fuerza a que, si el viewport es estrecho, aparezca scroll */
+  border-collapse: collapse;
+}
+
+.tabla-clasificacion th,
+.tabla-clasificacion td {
+  padding: 0.5rem 0.75rem;
+  text-align: center;
+  border-bottom: 1px solid #ddd;
+  white-space: nowrap;   /* Evita que el texto se rompa en varias líneas */
+  font-size: 0.9rem;     /* Ajuste para que se lea en móvil */
+}
+
+.tabla-clasificacion th {
+  background: #f9f9fb;
+  font-weight: bold;
+  position: sticky;      /* Para que el encabezado quede fijo al hacer scroll vertical */
+  top: 0;
+  z-index: 3;            /* Encima restante */
+}
+
+/* Sticky primera columna “Clubs” (fija al hacer scroll horizontal) */
+.tabla-clasificacion th:first-child,
+.tabla-clasificacion td:first-child {
+  position: sticky;
+  left: 0;               /* Se pega al borde izquierdo */
+  background: white;     /* Fondo blanco para que contraste */
+  z-index: 2;            /* Por debajo del encabezado (z-index:3) */
+}
+
+.club-cell {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;           /* Espacio entre escudo y nombre */
+}
+
+.escudo {
+  width: 32px;
+  height: 32px;
+  object-fit: cover;
+  border-radius: 4px;
+}
+
+.ultimo {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  margin: 0 2px;         /* Espacio entre puntitos */
+}
+
+.ultimo.victoria {
+  background: #16a34a;   /* Verde brillante */
+}
+
+.ultimo.empate {
+  background: #6b7280;   /* Gris neutro */
+}
+
+.ultimo.derrota {
+  background: #dc2626;   /* Rojo intenso */
+}
+
+.tabla-clasificacion tbody tr:nth-child(odd) {
+  background: #ffffff;
+}
+.tabla-clasificacion tbody tr:nth-child(even) {
+  background: #fafafa;
+}
+
+/* Botón de cierre (✕) en la esquina superior derecha de la tabla */
+.close-tabla {
+  position: absolute;
+  top: 0.5rem;
+  right: 0.5rem;
+  background: #dc2626;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 32px;
+  height: 32px;
+  font-size: 1.2rem;
+  line-height: 32px;
+  text-align: center;
+  cursor: pointer;
+  z-index: 10001;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+}
+
+.close-tabla.hidden {
+  display: none !important;
+}
+
+/* ---------------------------
+   MODO FULLSCREEN (SIN SCROLL)
+   --------------------------- */
+.clasificacion-container.fullscreen {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: white;
+  z-index: 10000;      /* Que cubra todo lo demás */
+  overflow: hidden;    /* Sin scroll; la tabla se adapta al ancho */
+  padding: 0.5rem 1rem 2rem; /* Padding para no tocar bordes */
+}
+
+/* En fullscreen, forzamos la tabla a ocupar 100% de ancho
+   y removemos min-width para que no genere scroll horizontal */
+.clasificacion-container.fullscreen .tabla-clasificacion {
+  width: 100%;
+  min-width: unset;
+}
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/*----------------------------------------------------
+  9. CARRUSEL DE NOTICIAS (SCROLL-SNAP VERTICAL)
+-----------------------------------------------------*/
+#noticias {
+  position: relative;
+}
+
+.carrusel-noticias {
+  /* scroll-snap-type: y mandatory; */
+  /* overflow-y: scroll; */ 
+  /* height: 100vh; */ 
+  padding-bottom: 0.5em; /* ajusta según el tamaño de tu footer */
   min-height: 100vh;     
   -webkit-overflow-scrolling: touch;
   scrollbar-width: none;
