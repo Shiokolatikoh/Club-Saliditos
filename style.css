@@ -32,7 +32,7 @@ header {
   justify-content: center;
   align-items: center;
   height: 10vh; /* 10% de la altura del viewport */
-  background: #f9f9fb;
+  background: linear-gradient(90deg, #e66465, #9198e5);
   padding: 0 1rem;
 }
 
@@ -217,8 +217,8 @@ footer {
 .clubs-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr); /* EXACTAMENTE 3 columnas */
-  gap: 1rem;
-  padding: 1rem;              /* Reducido para que quepan 3 columnas sin scroll */
+  gap: 0.2rem;
+  padding: 0.3rem;              /* Reducido para que quepan 3 columnas sin scroll */
   background-color: #f7f7f7;
   width: 100%;               /* Ocupa todo el ancho disponible */
   box-sizing: border-box;    /* Asegura que padding no produzca scroll extra */
