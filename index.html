@@ -34,9 +34,9 @@
              ahora ocupa todo el ancho y pegado al header)
              --------------------------------------------- -->
         <div class="subnav">
-          <button class="active" data-target="noticias">Noticias</button>
-          <button data-target="clubs">Clubs</button>
-          <button data-target="reglamento">Reglamento</button>
+          <button class="active" data-target="noticias">NOTICIAS</button>
+          <button data-target="clubs">CLUBS</button>
+          <button data-target="reglamento">CREW</button>
         </div>
 
         <!-- ======================
@@ -447,16 +447,16 @@
       <section id="champions" class="hidden">
         <h2>Champions</h2>
       </section>
-    </main>
 
-    <!-- ======================
-         Burbuja fija del conejo + Menú flotante (sin cambios)
+      <!-- ======================
+         Burbuja fija del conejo + Menú flotante modificado
          ====================== -->
     <div class="burbuja-conejo" onclick="toggleFloatingMenu()">
       <img src="imagenes/conejo.png" alt="Mr. Bunny" />
     </div>
 
     <div class="menu-flotante hidden" id="menuFlotante">
+      <!-- BOTÓN INICIO -->
       <button onclick="goTo('inicio')" aria-label="Inicio">
         <img
           src="imagenes/inicio.png"
@@ -464,35 +464,26 @@
           style="width: 45px; height: 45px;"
         />
       </button>
-      <button onclick="goTo('liga')" aria-label="Liga">
+      <!-- BOTÓN COMPETICIONES (muestra submenu) -->
+      <button id="btnCompeticiones" aria-label="Competiciones">
         <img
-          src="imagenes/liga.png"
-          alt="Liga"
+          src="imagenes/competiciones.png"
+          alt="Competiciones"
           style="width: 45px; height: 45px;"
         />
       </button>
-      <button onclick="goTo('copa')" aria-label="Copa">
+      <!-- BOTÓN CREW (reglamento) -->
+      <button onclick="goTo('reglamento')" aria-label="Crew">
         <img
-          src="imagenes/copa.png"
-          alt="Copa"
-          style="width: 40px; height: 40px;"
-        />
-      </button>
-      <button onclick="goTo('supercopa')" aria-label="Supercopa">
-        <img
-          src="imagenes/supercopa.png"
-          alt="Supercopa"
-          style="width: 40px; height: 40px;"
-        />
-      </button>
-      <button onclick="goTo('champions')" aria-label="Champions">
-        <img
-          src="imagenes/champions.png"
-          alt="Champions"
+          src="imagenes/crew.png"
+          alt="Crew"
           style="width: 45px; height: 45px;"
         />
       </button>
     </div>
+    </main>
+
+    
 
     <!-- ======================
          Footer (sin cambios)
