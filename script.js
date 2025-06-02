@@ -212,6 +212,7 @@ function goTo(id) {
 // ----------------------------------------------------
 // 7. AJUSTAR ALTURA DE CADA NOTICIA-SLIDE PARA SCROLL-SNAP
 // ----------------------------------------------------
+// La función se desactiva porque ya no necesitamos height:100vh en CSS
 // function ajustarAlturaSlides() {
 //  const vh = window.innerHeight;
 //  document.querySelectorAll('.noticia-slide').forEach((slide) => {
@@ -247,14 +248,26 @@ let overlay, expandedImg;
 // 10. MOSTRAR JORNADA SELECCIONADA (J1, J2, ...) Y PRESELECCIÓN
 // ----------------------------------------------------
 function selectJornada(n) {
+  // Ocultar todas las jornadas
   document.querySelectorAll('.jornada').forEach((j) => {
     j.classList.add('hidden');
     j.classList.remove('visible');
   });
+  // Mostrar la jornada seleccionada
   const target = document.getElementById(`jornada-${n}`);
   if (target) {
     target.classList.remove('hidden');
     target.classList.add('visible');
+  }
+  // Actualizar el texto del título con la jornada actual
+  const tituloJ = document.querySelector('.tituloJ');
+  if (tituloJ) {
+    tituloJ.textContent = `Jornada ${n}`;
+  }
+  // Cerrar el menú de jornadas si está abierto
+  const jornadaMenu = document.getElementById('jornadaMenu');
+  if (jornadaMenu) {
+    jornadaMenu.classList.remove('show');
   }
 }
 
@@ -287,7 +300,8 @@ const clubsInfo = {
     historia: 'Fundado en 1990, con una pasión por el juego justo.',
     titulos: '3 Ligas, 1 Copa',
     descripcion: 'Un club con gran historia y afición apasionada.',
-    imagen: 'imagenes/escudo berti.jpeg'
+    imagen: 'imagenes/escudo berti.jpeg',
+    bgColor: '#FFFDE7'
   },
   club2: {
     nombre: 'Club 2',
@@ -295,7 +309,8 @@ const clubsInfo = {
     historia: 'Nacido de la unión de comunidades locales.',
     titulos: '2 Ligas',
     descripcion: 'Club trabajador con talento emergente.',
-    imagen: 'imagenes/choco.jpeg'
+    imagen: 'imagenes/choco.jpeg',
+    bgColor: '#FFFDE7'
   },
   club3: {
     nombre: 'Club 3',
@@ -303,7 +318,8 @@ const clubsInfo = {
     historia: 'Proyecto joven con aspiraciones de futuro.',
     titulos: '1 Copa Regional',
     descripcion: 'Apasionados del deporte comunitario.',
-    imagen: 'imagenes/cabra.jpeg'
+    imagen: 'imagenes/cabra.jpeg',
+    bgColor: '#FFFDE7'
   },
   club4: {
     nombre: 'Club 4',
@@ -311,7 +327,8 @@ const clubsInfo = {
     historia: 'Fundado por un grupo de exjugadores veteranos.',
     titulos: '4 Ligas',
     descripcion: 'Equipo histórico con gran tradición.',
-    imagen: 'imagenes/retro.jpeg'
+    imagen: 'imagenes/retro.jpeg',
+    bgColor: '#FFFDE7'
   },
   club5: {
     nombre: 'Club 5',
@@ -319,7 +336,8 @@ const clubsInfo = {
     historia: 'Surge de jóvenes promesas de la ciudad.',
     titulos: '1 Copa Municipal',
     descripcion: 'Equipo centrado en la formación.',
-    imagen: 'imagenes/bufandas.jpeg'
+    imagen: 'imagenes/bufandas.jpeg',
+    bgColor: '#FFFDE7'
   },
   club6: {
     nombre: 'Club 6',
@@ -327,7 +345,8 @@ const clubsInfo = {
     historia: 'Club con raíces en una antigua asociación deportiva.',
     titulos: '2 Copas',
     descripcion: 'Tradición y renovación jugador tras jugador.',
-    imagen: 'imagenes/vive.jpeg'
+    imagen: 'imagenes/vive.jpeg',
+    bgColor: '#FFFDE7'
   },
   club7: {
     nombre: 'Club 7',
@@ -335,7 +354,8 @@ const clubsInfo = {
     historia: 'Hace décadas como equipo universitario.',
     titulos: '3 Títulos Regionales',
     descripcion: 'Fuerte vínculo con la educación y la competición.',
-    imagen: 'imagenes/Verdes.jpeg'
+    imagen: 'imagenes/Verdes.jpeg',
+    bgColor: '#FFFDE7'
   },
   club8: {
     nombre: 'Club 8',
@@ -343,7 +363,8 @@ const clubsInfo = {
     historia: 'Nacido de la afición al baloncesto callejero.',
     titulos: '1 Liga Amateur',
     descripcion: 'Espíritu urbano y pasión por el deporte.',
-    imagen: 'imagenes/Monos.jpeg'
+    imagen: 'imagenes/Monos.jpeg',
+    bgColor: '#FFFDE7'
   },
   club9: {
     nombre: 'Club 9',
@@ -351,7 +372,8 @@ const clubsInfo = {
     historia: 'Surge en los barrios del norte de la ciudad.',
     titulos: '2 Copas Juveniles',
     descripcion: 'Talento emergente y juego creativo.',
-    imagen: 'imagenes/dabe.png'
+    imagen: 'imagenes/dabe.png',
+    bgColor: '#FFFDE7'
   },
   club10: {
     nombre: 'Club 10',
@@ -359,7 +381,8 @@ const clubsInfo = {
     historia: 'Formado por exjugadores callejeros.',
     titulos: '1 Torneo Internacional',
     descripcion: 'Experiencia y técnica al servicio de la comunidad.',
-    imagen: 'imagenes/correas.jpeg'
+    imagen: 'imagenes/correas.jpeg',
+    bgColor: '#FFFDE7'
   },
   club11: {
     nombre: 'Club 11',
@@ -367,15 +390,19 @@ const clubsInfo = {
     historia: 'Recién fundado con perfil innovador.',
     titulos: '1 Título de Debut',
     descripcion: 'Apuesta por juventud y método científico.',
-    imagen: 'imagenes/flemin.jpeg'
+    imagen: 'imagenes/flemin.jpeg',
+    bgColor: '#FFFDE7'
   }
 };
 
 // Referencias al DOM para el grid de Clubs y el overlay
 let clubsGrid, clubOverlay, cardContent;
 
+// ----------------------------------------------------
+// Inicialización general al cargar la página
+// ----------------------------------------------------
 window.addEventListener('DOMContentLoaded', () => {
-  // Inicializar arrays de subsecciones y botones de “Inicio”
+  // 1) Inicializar arrays de subsecciones y botones de “Inicio”
   subSections = Array.from(document.querySelectorAll('#inicio .subsection'));
   subButtons = Array.from(document.querySelectorAll('.subnav button'));
 
@@ -388,7 +415,7 @@ window.addEventListener('DOMContentLoaded', () => {
     btn.addEventListener('click', () => showSubsectionByIndex(idx));
   });
 
-  // Inicializar swipe en “Liga”
+  // 2) Inicializar swipe en “Liga”
   showLigaByIndex(0);
   handleSwipeOnLiga();
 
@@ -400,17 +427,12 @@ window.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  // Ajustar altura de slides de noticias
-  // ajustarAlturaSlides();
-  // window.addEventListener('resize', ajustarAlturaSlides);
-  // window.addEventListener('orientationchange', ajustarAlturaSlides);
-
-  // Observar tarjetas de noticia para animación
+  // 3) Observar tarjetas de noticia para animación
   document.querySelectorAll('.noticia-card').forEach((card) => {
     observer.observe(card);
   });
 
-  // Inicializar overlay de noticias
+  // 4) Inicializar overlay de noticias
   overlay = document.getElementById('imageOverlay');
   expandedImg = document.getElementById('expandedImage');
   document.querySelectorAll('.noticia-card img').forEach((img) => {
@@ -424,17 +446,27 @@ window.addEventListener('DOMContentLoaded', () => {
     expandedImg.src = '';
   });
 
-  // Inicializar jornada por defecto
-  selectJornada(1);
+  // 5) Inicializar jornada por defecto (puedes cambiar el número aquí)
+  const jornadaInicial = 1;
+  selectJornada(jornadaInicial);
 
-  // Acelerar animación de título
+  // 6) Añadir listener al título de jornada para desplegar/ocultar el menú
+  const tituloJ = document.querySelector('.tituloJ');
+  const jornadaMenu = document.getElementById('jornadaMenu');
+  if (tituloJ && jornadaMenu) {
+    tituloJ.addEventListener('click', () => {
+      jornadaMenu.classList.toggle('show');
+    });
+  }
+
+  // 7) Acelerar animación de título
   titulo = document.getElementById('titulo');
   if (titulo) {
     titulo.addEventListener('click', acelerarAnimacion);
     titulo.addEventListener('touchstart', acelerarAnimacion);
   }
 
-  // Efecto highlight en scores
+  // 8) Efecto highlight en scores
   scores = document.querySelectorAll('.score-inline');
   scores.forEach((score) => {
     function highlight() {
@@ -455,7 +487,7 @@ window.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  // Toggle active en partidos
+  // 9) Toggle active en partidos
   document.querySelectorAll('.match').forEach((match) => {
     match.addEventListener('click', () => {
       match.classList.toggle('active');
@@ -468,7 +500,7 @@ window.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  // Fullscreen en tabla de clasificación
+  // 10) Fullscreen en tabla de clasificación
   contenedorTabla = document.getElementById('contenedorTabla');
   btnCerrarTabla = document.getElementById('closeTabla');
   if (contenedorTabla) {
@@ -478,7 +510,7 @@ window.addEventListener('DOMContentLoaded', () => {
     btnCerrarTabla.addEventListener('click', cerrarFullScreenTabla);
   }
 
-  // Renderizar grid de Clubs y su overlay
+  // 11) Renderizar grid de Clubs y su overlay
   clubsGrid = document.getElementById('clubsGrid');
   clubOverlay = document.getElementById('clubCardOverlay');
   cardContent = document.getElementById('clubCardContent');
@@ -531,9 +563,20 @@ function cerrarFullScreenTabla(event) {
 
 // ----------------------------------------------------
 // Función para mostrar overlay con detalles de cada club
+// ----------------------------------------------------
 function mostrarClub(id) {
   const club = clubsInfo[id];
   if (!club) return;
+
+  // 1) Asignar color de fondo a la tarjeta (.club-card-content).
+  //    Si no hay bgColor, por defecto será blanco.
+  if (club.bgColor) {
+    cardContent.style.backgroundColor = club.bgColor;
+  } else {
+    cardContent.style.backgroundColor = '#ffffff';
+  }
+
+  // 2) Inyectar el contenido HTML con los datos del club
   cardContent.innerHTML = `
     <h3>${club.nombre}</h3>
     <img src="${club.imagen}" alt="${club.nombre}">
@@ -542,5 +585,7 @@ function mostrarClub(id) {
     <p><strong>Títulos:</strong> ${club.titulos}</p>
     <p>${club.descripcion}</p>
   `;
+
+  // 3) Quitar la clase 'hidden' para mostrar el overlay
   clubOverlay.classList.remove('hidden');
 }
