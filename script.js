@@ -191,7 +191,55 @@ function toggleFloatingMenu() {
 }
 
 // ----------------------------------------------------
-// 6. NAVEGACIÓN DESDE BURBUJAS Y OCULTAR MENÚ FLOTANTE
+// 6. FUNCIONES PARA EL SUBMENÚ “COMPETICIONES”
+// ----------------------------------------------------
+function showCompetitionsMenu() {
+  const menu = document.getElementById('menuFlotante');
+  if (!menu) return;
+  // Reemplazar contenido con opciones de competiciones + botón atrás
+  menu.innerHTML = `
+    <button onclick="renderMainFloatingMenu()" aria-label="Atrás">
+      ←
+    </button>
+    <button onclick="goTo('liga')" aria-label="Liga">
+      <img src="imagenes/liga.png" alt="Liga" style="width: 45px; height: 45px;" />
+    </button>
+    <button onclick="goTo('copa')" aria-label="Copa">
+      <img src="imagenes/copa.png" alt="Copa" style="width: 40px; height: 40px;" />
+    </button>
+    <button onclick="goTo('supercopa')" aria-label="Supercopa">
+      <img src="imagenes/supercopa.png" alt="Supercopa" style="width: 40px; height: 40px;" />
+    </button>
+    <button onclick="goTo('champions')" aria-label="Champions">
+      <img src="imagenes/champions.png" alt="Champions" style="width: 45px; height: 45px;" />
+    </button>
+  `;
+}
+
+function renderMainFloatingMenu() {
+  const menu = document.getElementById('menuFlotante');
+  if (!menu) return;
+  // Restaurar el menú principal con las tres burbujas
+  menu.innerHTML = `
+    <button onclick="goTo('inicio')" aria-label="Inicio">
+      <img src="imagenes/inicio.png" alt="Inicio" style="width: 45px; height: 45px;" />
+    </button>
+    <button id="btnCompeticiones" aria-label="Competiciones">
+      <img src="imagenes/competiciones.png" alt="Competiciones" style="width: 45px; height: 45px;" />
+    </button>
+    <button onclick="goTo('reglamento')" aria-label="Crew">
+      <img src="imagenes/crew.png" alt="Crew" style="width: 45px; height: 45px;" />
+    </button>
+  `;
+  // Reasignar listener al botón de competiciones
+  const btnComp = document.getElementById('btnCompeticiones');
+  if (btnComp) {
+    btnComp.addEventListener('click', showCompetitionsMenu);
+  }
+}
+
+// ----------------------------------------------------
+// 7. NAVEGACIÓN DESDE BURBUJAS Y OCULTAR MENÚ FLOTANTE
 // ----------------------------------------------------
 function goTo(id) {
   document.querySelectorAll('main > section').forEach((sec) => {
@@ -210,7 +258,7 @@ function goTo(id) {
 }
 
 // ----------------------------------------------------
-// 7. AJUSTAR ALTURA DE CADA NOTICIA-SLIDE PARA SCROLL-SNAP
+// 8. AJUSTAR ALTURA DE CADA NOTICIA-SLIDE PARA SCROLL-SNAP
 // ----------------------------------------------------
 // La función se desactiva porque ya no necesitamos height:100vh en CSS
 // function ajustarAlturaSlides() {
@@ -225,7 +273,7 @@ function goTo(id) {
 //}
 
 // ----------------------------------------------------
-// 8. ANIMACIÓN CON INTERSECTIONOBSERVER PARA NOTICIA-CARD
+// 9. ANIMACIÓN CON INTERSECTIONOBSERVER PARA NOTICIA-CARD
 // ----------------------------------------------------
 const observer = new IntersectionObserver(
   (entries) => {
@@ -240,12 +288,12 @@ const observer = new IntersectionObserver(
 );
 
 // ----------------------------------------------------
-// 9. EXPANSIÓN DE IMÁGENES EN NOTICIAS CON OVERLAY
+// 10. EXPANSIÓN DE IMÁGENES EN NOTICIAS CON OVERLAY
 // ----------------------------------------------------
 let overlay, expandedImg;
 
 // ----------------------------------------------------
-// 10. MOSTRAR JORNADA SELECCIONADA (J1, J2, ...) Y PRESELECCIÓN
+// 11. MOSTRAR JORNADA SELECCIONADA (J1, J2, ...) Y PRESELECCIÓN
 // ----------------------------------------------------
 function selectJornada(n) {
   // Ocultar todas las jornadas
@@ -272,26 +320,26 @@ function selectJornada(n) {
 }
 
 // ----------------------------------------------------
-// 11. ACELERAR ANIMACIÓN DE TÍTULO AL HACER CLICK O TOUCH
+// 12. ACELERAR ANIMACIÓN DE TÍTULO AL HACER CLICK O TOUCH
 // ----------------------------------------------------
 let titulo;
 
 // ----------------------------------------------------
-// 12. EFECTO “HIGHLIGHT” AL HACER CLICK O ENTER/ESPACIO EN SCORE
+// 13. EFECTO “HIGHLIGHT” AL HACER CLICK O ENTER/ESPACIO EN SCORE
 // ----------------------------------------------------
 let scores;
 
 // ----------------------------------------------------
-// 13. TOGGLE “ACTIVE” EN CADA PARTIDO AL HACER CLICK Y KEYDOWN
+// 14. TOGGLE “ACTIVE” EN CADA PARTIDO AL HACER CLICK Y KEYDOWN
 // ----------------------------------------------------
 
 // ----------------------------------------------------
-// 14. MODO FULLSCREEN PARA LA TABLA DE CLASIFICACIÓN
+// 15. MODO FULLSCREEN PARA LA TABLA DE CLASIFICACIÓN
 // ----------------------------------------------------
 let contenedorTabla, btnCerrarTabla;
 
 // ----------------------------------------------------
-// 15. OVERLAY PARA EXPANDIR DETALLES DE CADA CLUB
+// 16. OVERLAY PARA EXPANDIR DETALLES DE CADA CLUB
 // ----------------------------------------------------
 const clubsInfo = {
   club1: {
@@ -301,7 +349,7 @@ const clubsInfo = {
     titulos: '3 Ligas, 1 Copa',
     descripcion: 'Un club con gran historia y afición apasionada.',
     imagen: 'imagenes/escudo berti.jpeg',
-    bgColor: '#FFFDE7'
+    bgColor: '#BFA600'
   },
   club2: {
     nombre: 'Club 2',
@@ -309,8 +357,8 @@ const clubsInfo = {
     historia: 'Nacido de la unión de comunidades locales.',
     titulos: '2 Ligas',
     descripcion: 'Club trabajador con talento emergente.',
-    imagen: 'imagenes/choco.jpeg',
-    bgColor: '#FFFDE7'
+    imagen: 'imagenes/Verdes.jpeg',
+    bgColor: '#014723'
   },
   club3: {
     nombre: 'Club 3',
@@ -391,6 +439,15 @@ const clubsInfo = {
     titulos: '1 Título de Debut',
     descripcion: 'Apuesta por juventud y método científico.',
     imagen: 'imagenes/flemin.jpeg',
+    bgColor: '#FFFDE7'
+  },
+  club12: {
+    nombre: 'Club 12',
+    presidente: 'Nombre 12',
+    historia: 'Recién fundado con perfil innovador.',
+    titulos: '1 Título de Debut',
+    descripcion: 'Apuesta por juventud y método científico.',
+    imagen: 'imagenes/presi.jpeg',
     bgColor: '#FFFDE7'
   }
 };
@@ -511,30 +568,47 @@ window.addEventListener('DOMContentLoaded', () => {
   }
 
   // 11) Renderizar grid de Clubs y su overlay
-  clubsGrid = document.getElementById('clubsGrid');
-  clubOverlay = document.getElementById('clubCardOverlay');
-  cardContent = document.getElementById('clubCardContent');
+clubsGrid = document.getElementById('clubsGrid');
+clubOverlay = document.getElementById('clubCardOverlay');
+cardContent = document.getElementById('clubCardContent');
 
-  Object.entries(clubsInfo).forEach(([id, club]) => {
-    const img = document.createElement('img');
-    img.src = club.imagen;
-    img.alt = club.nombre;
-    img.className = 'club-img';
-    img.dataset.id = id;
-    img.addEventListener('click', () => mostrarClub(id));
-    clubsGrid.appendChild(img);
-  });
+Object.entries(clubsInfo).forEach(([id, club]) => {
+  // 1) Crear contenedor de cada celda
+  const cell = document.createElement('div');
+  cell.className = 'club-item';
 
-  clubOverlay.addEventListener('click', (e) => {
-    if (e.target === clubOverlay) {
-      clubOverlay.classList.add('hidden');
-      cardContent.innerHTML = '';
-    }
-  });
+  // 2) Crear la etiqueta <img> para el escudo
+  const img = document.createElement('img');
+  img.src = club.imagen;
+  img.alt = club.nombre;
+  img.className = 'club-img';
+  img.dataset.id = id;
+  img.addEventListener('click', () => mostrarClub(id));
+
+  // 3) Anidar solo la imagen en la celda (sin <p>)
+  cell.appendChild(img);
+
+  // 4) Añadir la celda al grid
+  clubsGrid.appendChild(cell);
+});
+
+clubOverlay.addEventListener('click', (e) => {
+  if (e.target === clubOverlay) {
+    clubOverlay.classList.add('hidden');
+    cardContent.innerHTML = '';
+  }
+});
+
+  // 12) Añadir listener al botón de competiciones en menú flotante
+  const btnComp = document.getElementById('btnCompeticiones');
+  if (btnComp) {
+    btnComp.addEventListener('click', showCompetitionsMenu);
+  }
 });
 
 // ----------------------------------------------------
 // Función para acelerar animación de título
+// ----------------------------------------------------
 function acelerarAnimacion() {
   if (!titulo) return;
   titulo.classList.add('acelerado');
@@ -545,6 +619,7 @@ function acelerarAnimacion() {
 
 // ----------------------------------------------------
 // Funciones para fullscreen de tabla de clasificación
+// ----------------------------------------------------
 function abrirFullScreenTabla(event) {
   if (!contenedorTabla.classList.contains('fullscreen')) {
     contenedorTabla.classList.add('fullscreen');
