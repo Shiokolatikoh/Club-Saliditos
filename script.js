@@ -343,112 +343,112 @@ let contenedorTabla, btnCerrarTabla;
 // ----------------------------------------------------
 const clubsInfo = {
   club1: {
-    nombre: 'Club 1',
-    presidente: 'Nombre 1',
-    historia: 'Fundado en 1990, con una pasión por el juego justo.',
-    titulos: '3 Ligas, 1 Copa',
-    descripcion: 'Un club con gran historia y afición apasionada.',
-    imagen: 'imagenes/escudo berti.jpeg',
-    bgColor: '#BFA600'
+    nombre: 'Saliditos Club',
+    presidente: 'Señor Conejo',
+    historia: '',
+    titulos: '0',
+    descripcion: '',
+    imagen: 'imagenes/presi.jpeg',
+    bgColor: ''
   },
   club2: {
-    nombre: 'Club 2',
-    presidente: 'Nombre 2',
-    historia: 'Nacido de la unión de comunidades locales.',
-    titulos: '2 Ligas',
-    descripcion: 'Club trabajador con talento emergente.',
-    imagen: 'imagenes/Verdes.jpeg',
-    bgColor: '#014723'
+    nombre: 'La retrovisioneta',
+    presidente: 'Dina Maiki',
+    historia: 'Rápido y veloz',
+    titulos: 'Una salidito slick',
+    descripcion: 'Equipo histórico',
+    imagen: 'imagenes/retro.jpeg',
+    bgColor: ''
   },
   club3: {
-    nombre: 'Club 3',
-    presidente: 'Nombre 3',
-    historia: 'Proyecto joven con aspiraciones de futuro.',
-    titulos: '1 Copa Regional',
-    descripcion: 'Apasionados del deporte comunitario.',
-    imagen: 'imagenes/cabra.jpeg',
-    bgColor: '#FFFDE7'
+    nombre: 'LAMPS UNITED',
+    presidente: 'SEÑOR JUEZ',
+    historia: '',
+    titulos: '0',
+    descripcion: '',
+    imagen: 'imagenes/choco.jpeg',
+    bgColor: ''
   },
   club4: {
-    nombre: 'Club 4',
-    presidente: 'Nombre 4',
-    historia: 'Fundado por un grupo de exjugadores veteranos.',
-    titulos: '4 Ligas',
-    descripcion: 'Equipo histórico con gran tradición.',
-    imagen: 'imagenes/retro.jpeg',
-    bgColor: '#FFFDE7'
+    nombre: 'Vive Cluj',
+    presidente: 'Capitán España',
+    historia: 'Histórico',
+    titulos: 'Cero',
+    descripcion: '',
+    imagen: 'imagenes/Monos.jpeg',
+    bgColor: ''
   },
   club5: {
-    nombre: 'Club 5',
-    presidente: 'Nombre 5',
-    historia: 'Surge de jóvenes promesas de la ciudad.',
-    titulos: '1 Copa Municipal',
-    descripcion: 'Equipo centrado en la formación.',
-    imagen: 'imagenes/bufandas.jpeg',
-    bgColor: '#FFFDE7'
+    nombre: '',
+    presidente: '',
+    historia: '',
+    titulos: '0',
+    descripcion: '',
+    imagen: 'imagenes/cabra.jpeg',
+    bgColor: ''
   },
   club6: {
-    nombre: 'Club 6',
-    presidente: 'Nombre 6',
-    historia: 'Club con raíces en una antigua asociación deportiva.',
-    titulos: '2 Copas',
-    descripcion: 'Tradición y renovación jugador tras jugador.',
-    imagen: 'imagenes/vive.jpeg',
-    bgColor: '#FFFDE7'
+    nombre: '',
+    presidente: '',
+    historia: '',
+    titulos: '0',
+    descripcion: '',
+    imagen: 'imagenes/escudo berti.jpeg',
+    bgColor: ''
   },
   club7: {
-    nombre: 'Club 7',
-    presidente: 'Nombre 7',
-    historia: 'Hace décadas como equipo universitario.',
-    titulos: '3 Títulos Regionales',
-    descripcion: 'Fuerte vínculo con la educación y la competición.',
-    imagen: 'imagenes/Verdes.jpeg',
-    bgColor: '#FFFDE7'
+    nombre: '',
+    presidente: '',
+    historia: '',
+    titulos: '0',
+    descripcion: '',
+    imagen: 'imagenes/bufandas.jpeg',
+    bgColor: ''
   },
   club8: {
-    nombre: 'Club 8',
-    presidente: 'Nombre 8',
-    historia: 'Nacido de la afición al baloncesto callejero.',
-    titulos: '1 Liga Amateur',
-    descripcion: 'Espíritu urbano y pasión por el deporte.',
-    imagen: 'imagenes/Monos.jpeg',
-    bgColor: '#FFFDE7'
+    nombre: '',
+    presidente: '',
+    historia: '',
+    titulos: '0',
+    descripcion: '',
+    imagen: 'imagenes/correas.jpeg',
+    bgColor: ''
   },
   club9: {
-    nombre: 'Club 9',
-    presidente: 'Nombre 9',
-    historia: 'Surge en los barrios del norte de la ciudad.',
-    titulos: '2 Copas Juveniles',
-    descripcion: 'Talento emergente y juego creativo.',
-    imagen: 'imagenes/dabe.png',
-    bgColor: '#FFFDE7'
+    nombre: '',
+    presidente: '',
+    historia: '',
+    titulos: '0',
+    descripcion: '',
+    imagen: 'imagenes/Verdes.jpeg',
+    bgColor: ''
   },
   club10: {
-    nombre: 'Club 10',
-    presidente: 'Nombre 10',
-    historia: 'Formado por exjugadores callejeros.',
-    titulos: '1 Torneo Internacional',
-    descripcion: 'Experiencia y técnica al servicio de la comunidad.',
-    imagen: 'imagenes/correas.jpeg',
-    bgColor: '#FFFDE7'
+    nombre: '',
+    presidente: '',
+    historia: '',
+    titulos: '0',
+    descripcion: '',
+    imagen: 'imagenes/vive.jpeg',
+    bgColor: ''
   },
   club11: {
-    nombre: 'Club 11',
-    presidente: 'Nombre 11',
-    historia: 'Recién fundado con perfil innovador.',
-    titulos: '1 Título de Debut',
-    descripcion: 'Apuesta por juventud y método científico.',
+    nombre: '',
+    presidente: '',
+    historia: '',
+    titulos: '0',
+    descripcion: '',
     imagen: 'imagenes/flemin.jpeg',
-    bgColor: '#FFFDE7'
+    bgColor: ''
   },
   club12: {
-    nombre: 'Club 12',
-    presidente: 'Nombre 12',
-    historia: 'Recién fundado con perfil innovador.',
-    titulos: '1 Título de Debut',
-    descripcion: 'Apuesta por juventud y método científico.',
-    imagen: 'imagenes/presi.jpeg',
-    bgColor: '#FFFDE7'
+    nombre: '',
+    presidente: '',
+    historia: '',
+    titulos: '0',
+    descripcion: '',
+    imagen: 'imagenes/dabe.png',
+    bgColor: ''
   }
 };
 
@@ -604,6 +604,7 @@ clubOverlay.addEventListener('click', (e) => {
   if (btnComp) {
     btnComp.addEventListener('click', showCompetitionsMenu);
   }
+  
 });
 
 // ----------------------------------------------------
