@@ -227,7 +227,7 @@ function renderMainFloatingMenu() {
     <button id="btnCompeticiones" aria-label="Competiciones">
       <img src="imagenes/competiciones.png" alt="Competiciones" style="width: 45px; height: 45px;" />
     </button>
-    <button onclick="goTo('reglamento')" aria-label="Crew">
+    <button onclick="goTo('crew')" aria-label="Crew">
       <img src="imagenes/crew.png" alt="Crew" style="width: 45px; height: 45px;" />
     </button>
   `;
@@ -242,15 +242,29 @@ function renderMainFloatingMenu() {
 // 7. NAVEGACIÓN DESDE BURBUJAS Y OCULTAR MENÚ FLOTANTE
 // ----------------------------------------------------
 function goTo(id) {
+  // 1) Ocultar todas las secciones
   document.querySelectorAll('main > section').forEach((sec) => {
     sec.classList.add('hidden');
     sec.classList.remove('visible');
   });
+
+  // 2) Mostrar la sección destino
   const destino = document.getElementById(id);
   if (destino) {
     destino.classList.remove('hidden');
     destino.classList.add('visible');
+
+    // ─────────────── Añadido: forzar scroll al TOPE de la sección ───────────────
+    // Opción A: con scrollIntoView
+    destino.scrollIntoView({ behavior: 'auto', block: 'start' });
+    // (block: 'start' asegura que la parte superior de 'destino' quede en la parte superior de la ventana)
+
+    // Si la sección tiene un contenedor interno con scroll propio, también podrías resetear eso:
+    // destino.scrollTop = 0;
+    // ────────────────────────────────────────────────────────────────────────────────
   }
+
+  // 3) Ocultar el menú flotante
   const menu = document.getElementById('menuFlotante');
   if (menu) {
     menu.classList.add('hidden');
@@ -606,6 +620,37 @@ clubOverlay.addEventListener('click', (e) => {
   }
   
 });
+
+const menuBtn = document.getElementById('menuBtn');
+  const crewSection = document.getElementById('crew');
+  menuBtn.addEventListener('click', () => {
+    crewSection.classList.toggle('active');
+  });
+  const menuLinks = document.querySelectorAll('#crew .navCew .menu-link');
+  menuLinks.forEach(link => {
+    link.addEventListener('click', () => {
+      crewSection.classList.remove('active');
+    });
+  });
+
+  const revealElements = document.querySelectorAll('.titulopresis, .letrapresis, #crew article img');
+  const observerOptions = {
+    root: null,
+    rootMargin: '0px',
+    threshold: 0.1
+  };
+  const revealOnIntersect = (entries, observer) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        observer.unobserve(entry.target);
+      }
+    });
+  };
+  const observerCrew = new IntersectionObserver(revealOnIntersect, observerOptions);
+  revealElements.forEach(el => {
+    observerCrew.observe(el);
+  });
 
 // ----------------------------------------------------
 // Función para acelerar animación de título
