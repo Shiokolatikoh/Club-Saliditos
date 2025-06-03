@@ -448,6 +448,97 @@
         <h2>Champions</h2>
       </section>
 
+
+
+    <!-- ============================================================
+                    CREW
+      ============================================================= -->
+<!-- ============================================================
+                    CREW
+      ============================================================= -->
+
+<section id="crew" class="hidden">
+  <article class="headerCrew">
+    <div class="logo">Presidentes</div>
+    <button class="menu-toggle" id="menuBtn" aria-label="Abrir menú">☰</button>
+  </article>
+
+  <article class="navCew">
+    <a href="#presidente1" class="menu-link">Presidente A</a>
+    <a href="#presidente2" class="menu-link">Presidente B</a>
+    <a href="#presidente3" class="menu-link">Presidente C</a>
+    <a href="#presidente4" class="menu-link">Presidente D</a>
+    <a href="#presidente5" class="menu-link">Presidente E</a>
+    <a href="#presidente6" class="menu-link">Presidente F</a>
+    <a href="#presidente7" class="menu-link">Presidente G</a>
+    <a href="#presidente8" class="menu-link">Presidente H</a>
+    <a href="#presidente9" class="menu-link">Presidente I</a>
+  </article>
+
+  <article id="presidente1">
+    <h2 class="titulopresis">Presidente A</h2>
+    <img src="" alt="Imagen Presidente A 1" />
+    <p class="letrapresis">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque rutrum justo vitae lorem.</p>
+    <img src="" alt="Imagen Presidente A 2" />
+  </article>
+
+  <article id="presidente2">
+    <h2 class="titulopresis">Presidente B</h2>
+    <img src="" alt="Imagen Presidente B 1" />
+    <p class="letrapresis">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque rutrum justo vitae lorem.</p>
+    <img src="" alt="Imagen Presidente B 2" />
+  </article>
+
+  <article id="presidente3">
+    <h2 class="titulopresis">Presidente C</h2>
+    <img src="" alt="Imagen Presidente C 1" />
+    <p class="letrapresis">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque rutrum justo vitae lorem.</p>
+    <img src="" alt="Imagen Presidente C 2" />
+  </article>
+
+  <article id="presidente4">
+    <h2 class="titulopresis">Presidente D</h2>
+    <img src="" alt="Imagen Presidente D 1" />
+    <p class="letrapresis">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque rutrum justo vitae lorem.</p>
+    <img src="" alt="Imagen Presidente D 2" />
+  </article>
+
+  <article id="presidente5">
+    <h2 class="titulopresis">Presidente E</h2>
+    <img src="" alt="Imagen Presidente E 1" />
+    <p class="letrapresis">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque rutrum justo vitae lorem.</p>
+    <img src="" alt="Imagen Presidente E 2" />
+  </article>
+
+  <article id="presidente6">
+    <h2 class="titulopresis">Presidente F</h2>
+    <img src="" alt="Imagen Presidente F 1" />
+    <p class="letrapresis">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque rutrum justo vitae lorem.</p>
+    <img src="" alt="Imagen Presidente F 2" />
+  </article>
+
+  <article id="presidente7">
+    <h2 class="titulopresis">Presidente G</h2>
+    <img src="" alt="Imagen Presidente G 1" />
+    <p class="letrapresis">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque rutrum justo vitae lorem.</p>
+    <img src="" alt="Imagen Presidente G 2" />
+  </article>
+
+  <article id="presidente8">
+    <h2 class="titulopresis">Presidente H</h2>
+    <img src="imagenes/copa.png" alt="Imagen Presidente H 1" />
+    <p class="letrapresis">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque rutrum justo vitae lorem.</p>
+    <img src="imagenes/Monos.jpeg" alt="Imagen Presidente H 2" />
+  </article>
+
+  <article id="presidente9">
+    <h2 class="titulopresis">Presidente I</h2>
+    <img src="imagenes/supercopa.png" alt="Imagen Presidente I 1" />
+    <p class="letrapresis">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque rutrum justo vitae lorem.</p>
+    <img src="imagenes/vive.jpeg" alt="Imagen Presidente I 2" />
+  </article>
+</section>
+
       <!-- ======================
          Burbuja fija del conejo + Menú flotante modificado
          ====================== -->
@@ -473,7 +564,7 @@
         />
       </button>
       <!-- BOTÓN CREW (reglamento) -->
-      <button onclick="goTo('reglamento')" aria-label="Crew">
+      <button onclick="goTo('crew')" aria-label="Crew">
         <img
           src="imagenes/crew.png"
           alt="Crew"
@@ -491,5 +582,46 @@
     <footer>
       <p>&copy; 2025 Saliditos Club</p>
     </footer>
+
+   <script>
+  // 1) Toggle del menú
+  const menuBtn = document.getElementById('menuBtn');
+  const crewSection = document.getElementById('crew');
+
+  menuBtn.addEventListener('click', () => {
+    crewSection.classList.toggle('active');
+  });
+
+  const menuLinks = document.querySelectorAll('#crew .navCew .menu-link');
+  menuLinks.forEach(link => {
+    link.addEventListener('click', () => {
+      crewSection.classList.remove('active');
+    });
+  });
+
+  // 2) Intersection Observer para revelar elementos al hacer scroll
+  document.addEventListener('DOMContentLoaded', () => {
+    const revealElements = document.querySelectorAll('.titulopresis, .letrapresis, #crew article img');
+    const observerOptions = {
+      root: null,
+      rootMargin: '0px',
+      threshold: 0.1
+    };
+
+    const revealOnIntersect = (entries, observer) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    };
+
+    const observer = new IntersectionObserver(revealOnIntersect, observerOptions);
+    revealElements.forEach(el => {
+      observer.observe(el);
+    });
+  });
+</script>
   </body>
 </html>
