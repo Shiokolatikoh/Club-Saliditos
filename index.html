@@ -36,7 +36,7 @@
         <div class="subnav">
           <button class="active" data-target="noticias">NOTICIAS</button>
           <button data-target="clubs">CLUBS</button>
-          <button data-target="reglamento">CREW</button>
+          <button data-target="reglamento">REGLAMENTO</button>
         </div>
 
         <!-- ======================
@@ -52,13 +52,11 @@
             <!-- NOTICIA 1 -->
             <div class="noticia-slide">
               <div class="noticia-card">
-                <span class="noticia-fecha">28 mayo 2025</span>
-                <h3>Gran final de la liga</h3>
+                <span class="noticia-fecha">14 Junio 2025</span>
+              <h3>Presentación Club Saliditos</h3>
                 <img src="imagenes/vive.jpeg" alt="Final Liga" loading="lazy" />
                 <p>
-                  La temporada llega a su fin con una emocionante final entre los
-                  líderes. El estadio vibró con los goles y la emoción de los
-                  fanáticos que no dejaron de alentar a sus equipos.
+                  Nuestro presidente sorprende en Alagón con la presentación oficial del Proyecto Saliditos Club para la temporada 2025/2026.
                 </p>
               </div>
             </div>
@@ -66,8 +64,8 @@
             <!-- NOTICIA 2 -->
             <div class="noticia-slide">
               <div class="noticia-card">
-                <span class="noticia-fecha">20 mayo 2025</span>
-                <h3>Reunión de presidentes</h3>
+                <span class="noticia-fecha">13 Junio 2025</span>
+                <h3>Reunión en Alagón</h3>
                 <img src="imagenes/copa.png" alt="Reunión" loading="lazy" />
                 <p>
                   Los representantes de los clubes se reunieron para discutir
@@ -82,7 +80,7 @@
             <div class="noticia-slide">
               <div class="noticia-card">
                 <span class="noticia-fecha">20 mayo 2025</span>
-                <h3>Reunión de presidentes</h3>
+                <h3>Camiseta temporada 23/24</h3>
                 <img src="imagenes/supercopa.png" alt="Reunión" loading="lazy" />
                 <p>
                   Los representantes de los clubes se reunieron para discutir
@@ -459,7 +457,7 @@
 
 <section id="crew" class="hidden">
   <article class="headerCrew">
-    <div class="logo">Presidentes</div>
+    <div class="logo">Crew</div>
     <button class="menu-toggle" id="menuBtn" aria-label="Abrir menú">☰</button>
   </article>
 
@@ -582,46 +580,5 @@
     <footer>
       <p>&copy; 2025 Saliditos Club</p>
     </footer>
-
-   <script>
-  // 1) Toggle del menú
-  const menuBtn = document.getElementById('menuBtn');
-  const crewSection = document.getElementById('crew');
-
-  menuBtn.addEventListener('click', () => {
-    crewSection.classList.toggle('active');
-  });
-
-  const menuLinks = document.querySelectorAll('#crew .navCew .menu-link');
-  menuLinks.forEach(link => {
-    link.addEventListener('click', () => {
-      crewSection.classList.remove('active');
-    });
-  });
-
-  // 2) Intersection Observer para revelar elementos al hacer scroll
-  document.addEventListener('DOMContentLoaded', () => {
-    const revealElements = document.querySelectorAll('.titulopresis, .letrapresis, #crew article img');
-    const observerOptions = {
-      root: null,
-      rootMargin: '0px',
-      threshold: 0.1
-    };
-
-    const revealOnIntersect = (entries, observer) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('visible');
-          observer.unobserve(entry.target);
-        }
-      });
-    };
-
-    const observer = new IntersectionObserver(revealOnIntersect, observerOptions);
-    revealElements.forEach(el => {
-      observer.observe(el);
-    });
-  });
-</script>
   </body>
 </html>
