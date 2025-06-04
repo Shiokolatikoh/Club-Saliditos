@@ -340,6 +340,12 @@ footer {
   position: relative;
 }
 
+.fondonegro {
+  background: #858585;
+}
+
+
+
 .noticia-card.visible {
   transform: translateY(0);
   opacity: 1;
@@ -348,7 +354,7 @@ footer {
 .noticia-card img {
   width: 100%;
   border-radius: 16px;
-  margin: 1em 0;
+  margin: 0.5em 0;
   cursor: zoom-in;
   transition: transform 0.3s ease;
 }
@@ -364,15 +370,27 @@ footer {
 }
 
 .noticia-card p {
-  font-size: 1em;
+  font-size: 1.2em;
   color: var(--texto);
-  line-height: 1.6;
+  line-height: 1.2;
   transition: transform 0.6s ease, opacity 0.6s ease;
+  text-align: left;
+
+}
+
+.texto-color {
+  color: #F8F5F5 !important;
+  font-weight: bold;
 }
 
 .noticia-fecha {
   font-size: 0.9em;
   color: var(--gris);
+}
+
+.color-fecha {
+  color: #F8F5F5 !important; 
+  font-weight: bold;
 }
 
 .image-overlay {
@@ -426,6 +444,37 @@ footer {
   color: white;
   cursor: pointer;
   font-weight: bold;
+}
+
+
+
+/* audio noticias */
+
+/* Botón circular pequeño, minimalista y elegante */
+.btn-audio {
+  width: 2rem;              /* Tamaño pequeño */
+  height: 2rem;
+  border: none;
+  border-radius: 50%;
+  background-color: var(--magenta);
+  color: white;
+  font-size: 1rem;          /* Ícono legible */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+/* Hover sencillo */
+.btn-audio:hover {
+  background-color: var(--azul);
+}
+
+/* Cuando esté sonando, cambiamos ligeramente */
+.btn-audio.playing {
+  background-color: var(--gris);
+  color: white;
 }
 
 /*----------------------------------------------------
@@ -695,109 +744,7 @@ footer {
   }
 }
 
-/*----------------------------------------------------
-  13. CONTENEDOR Y TABLA DE CLASIFICACIÓN
------------------------------------------------------*/
-.clasificacion-container {
-  overflow-x: auto;      /* Permite scroll horizontal en móvil */
-  padding: 0.5rem;       /* Pequeño padding para que el table no quede pegado al borde */
-}
-
-.tabla-clasificacion {
-  width: 100%;
-  min-width: 600px;      /* Fuerza a que, si el viewport es estrecho, aparezca scroll */
-  border-collapse: collapse;
-}
-
-.tabla-clasificacion th,
-.tabla-clasificacion td {
-  padding: 0.5rem 0.75rem;
-  text-align: center;
-  border-bottom: 1px solid #ddd;
-  white-space: nowrap;   /* Evita que el texto se rompa en varias líneas */
-  font-size: 0.9rem;     /* Ajuste para que se lea en móvil */
-}
-
-.tabla-clasificacion th {
-  background: #f9f9fb;
-  font-weight: bold;
-  position: sticky;      /* Para que el encabezado quede fijo al hacer scroll vertical */
-  top: 0;
-  z-index: 3;            /* Encima restante */
-}
-
-/* Sticky primera columna “Clubs” (fija al hacer scroll horizontal) */
-.tabla-clasificacion th:first-child,
-.tabla-clasificacion td:first-child {
-  position: sticky;
-  left: 0;               /* Se pega al borde izquierdo */
-  background: white;     /* Fondo blanco para que contraste */
-  z-index: 2;            /* Por debajo del encabezado (z-index:3) */
-}
-
-.club-cell {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;           /* Espacio entre escudo y nombre */
-}
-
-.escudo {
-  width: 32px;
-  height: 32px;
-  object-fit: cover;
-  border-radius: 4px;
-}
-
-.ultimo {
-  display: inline-block;
-  width: 10px;
-  height: 10px;
-  border-radius: 50%;
-  margin: 0 2px;         /* Espacio entre puntitos */
-}
-
-.ultimo.victoria {
-  background: #16a34a;   /* Verde brillante */
-}
-
-.ultimo.empate {
-  background: #6b7280;   /* Gris neutro */
-}
-
-.ultimo.derrota {
-  background: #dc2626;   /* Rojo intenso */
-}
-
-.tabla-clasificacion tbody tr:nth-child(odd) {
-  background: #ffffff;
-}
-.tabla-clasificacion tbody tr:nth-child(even) {
-  background: #fafafa;
-}
-
-/* Botón de cierre (✕) en la esquina superior derecha de la tabla */
-.close-tabla {
-  position: absolute;
-  top: 0.5rem;
-  right: 0.5rem;
-  background: #dc2626;
-  color: white;
-  border: none;
-  border-radius: 50%;
-  width: 32px;
-  height: 32px;
-  font-size: 1.2rem;
-  line-height: 32px;
-  text-align: center;
-  cursor: pointer;
-  z-index: 10001;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
-}
-
-.close-tabla.hidden {
-  display: none !important;
-}
-
+/
 /* ---------------------------
    MODO FULLSCREEN (SIN SCROLL)
    --------------------------- */
