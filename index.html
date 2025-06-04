@@ -65,24 +65,29 @@
             <div class="noticia-slide">
               <div class="noticia-card">
                 <span class="noticia-fecha">13 Junio 2025</span>
-                <h3>Reunión en Alagón</h3>
+                <h3>Excursion a Alagón</h3>
                 <img src="imagenes/copa.png" alt="Reunión" loading="lazy" />
+                <!-- Botón minimalista de play/pause -->
+                <button id="btnAudio2" class="btn-audio" aria-label="Reproducir audio">▶</button>
+
+                <!-- Audio oculto -->
+                <audio id="audioNoticia2" src="imagenes/escursion.mp3"></audio>
                 <p>
-                  Los representantes de los clubes se reunieron para discutir
-                  nuevas reglas que afectarán directamente la temporada siguiente.
-                  Se espera un cambio en la reglamentación del VAR y de los tiempos
-                  suplementarios.
+                   Reunión de presidentes en Alagón, en plenas fiestas del pueblo.
+                   Poco reglamento y mucha táctica: defensa firme en barra, centro del campo creativo, extremos desbordando a los rivales y puntas enchufados... ¡ni una dejaron pasar!
                 </p>
+
+                
               </div>
             </div>
 
             <!-- NOTICIA 3 -->
             <div class="noticia-slide">
-              <div class="noticia-card">
-                <span class="noticia-fecha">20 mayo 2025</span>
-                <h3>Camiseta temporada 23/24</h3>
-                <img src="imagenes/supercopa.png" alt="Reunión" loading="lazy" />
-                <p>
+              <div class="noticia-card fondonegro" >
+                <span class="noticia-fecha color-fecha">20 mayo 2025</span>
+                <h3>CAMISETA OFICIAL 23/24</h3>
+                <img src="imagenes/camiseta.jpeg" alt="Reunión" loading="lazy" />
+                <p class="texto-color">
                   Los representantes de los clubes se reunieron para discutir
                   nuevas reglas que afectarán directamente la temporada siguiente.
                   Se espera un cambio en la reglamentació.
@@ -270,167 +275,1517 @@
                 </div>
               </div>
 
-              <!-- Ejemplo Jornada 2 -->
+              
               <div class="jornada hidden" id="jornada-2">
-                <h3>Jornada 2</h3>
-                <p>Club A 1 - 2 Club C</p>
+                <div class="matchday">
+                  <!-- Partido 1 -->
+                  <div class="match" tabindex="0">
+                    <div class="teams">
+                      <div class="team">
+                        <div class="team-details">
+                          <img src="imagenes/cabra.jpeg" alt="Club A Escudo" />
+                          <div class="team-name">Lambs United</div>
+                        </div>
+                        <div class="score-inline">69</div>
+                      </div>
+                      <div class="team">
+                        <div class="team-details">
+                          <img src="imagenes/vive.jpeg" alt="Club B Escudo" />
+                          <div class="team-name">Vive Cluj</div>
+                        </div>
+                        <div class="score-inline">66</div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Partido 2 -->
+                  <div class="match" tabindex="0">
+                    <div class="teams">
+                      <div class="team">
+                        <div class="team-details">
+                          <img src="imagenes/retro.jpeg" alt="Club A Escudo" />
+                          <div class="team-name">Retrovisoneta</div>
+                        </div>
+                        <div class="score-inline">33</div>
+                      </div>
+                      <div class="team">
+                        <div class="team-details">
+                          <img
+                            src="imagenes/escudo berti.jpeg"
+                            alt="Club B Escudo"
+                          />
+                          <div class="team-name">Albertwin</div>
+                        </div>
+                        <div class="score-inline">31</div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Partido 3 -->
+                  <div class="match" tabindex="0">
+                    <div class="teams">
+                      <div class="team">
+                        <div class="team-details">
+                          <img src="imagenes/verdes.jpeg" alt="Club A Escudo" />
+                          <div class="team-name">Verdes Bremen</div>
+                        </div>
+                        <div class="score-inline">4</div>
+                      </div>
+                      <div class="team">
+                        <div class="team-details">
+                          <img src="imagenes/Monos.jpeg" alt="Club B Escudo" />
+                          <div class="team-name">Monos FC</div>
+                        </div>
+                        <div class="score-inline">7</div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Partido 4 -->
+                  <div class="match" tabindex="0">
+                    <div class="teams">
+                      <div class="team">
+                        <div class="team-details">
+                          <img src="imagenes/flemin.jpeg" alt="Club A Escudo" />
+                          <div class="team-name">Flemingo</div>
+                        </div>
+                        <div class="score-inline">99</div>
+                      </div>
+                      <div class="team">
+                        <div class="team-details">
+                          <img src="imagenes/correas.jpeg" alt="Club B Escudo" />
+                          <div class="team-name">Correas SAD</div>
+                        </div>
+                        <div class="score-inline">69</div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Partido 5 -->
+                  <div class="match" tabindex="0">
+                    <div class="teams">
+                      <div class="team">
+                        <div class="team-details">
+                          <img src="imagenes/choco.jpeg" alt="Club A Escudo" />
+                          <div class="team-name">Shiokolatikohs UD</div>
+                        </div>
+                        <div class="score-inline">0</div>
+                      </div>
+                      <div class="team">
+                        <div class="team-details">
+                          <img src="imagenes/bufandas.jpeg" alt="Club B Escudo" />
+                          <div class="team-name">Bufandas FC</div>
+                        </div>
+                        <div class="score-inline">1</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
               </div>
+
+              <div class="jornada hidden" id="jornada-3">
+                <div class="matchday">
+                  <!-- Partido 1 -->
+                  <div class="match" tabindex="0">
+                    <div class="teams">
+                      <div class="team">
+                        <div class="team-details">
+                          <img src="imagenes/cabra.jpeg" alt="Club A Escudo" />
+                          <div class="team-name">Lambs United</div>
+                        </div>
+                        <div class="score-inline">69</div>
+                      </div>
+                      <div class="team">
+                        <div class="team-details">
+                          <img src="imagenes/vive.jpeg" alt="Club B Escudo" />
+                          <div class="team-name">Vive Cluj</div>
+                        </div>
+                        <div class="score-inline">66</div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Partido 2 -->
+                  <div class="match" tabindex="0">
+                    <div class="teams">
+                      <div class="team">
+                        <div class="team-details">
+                          <img src="imagenes/retro.jpeg" alt="Club A Escudo" />
+                          <div class="team-name">Retrovisoneta</div>
+                        </div>
+                        <div class="score-inline">33</div>
+                      </div>
+                      <div class="team">
+                        <div class="team-details">
+                          <img
+                            src="imagenes/escudo berti.jpeg"
+                            alt="Club B Escudo"
+                          />
+                          <div class="team-name">Albertwin</div>
+                        </div>
+                        <div class="score-inline">31</div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Partido 3 -->
+                  <div class="match" tabindex="0">
+                    <div class="teams">
+                      <div class="team">
+                        <div class="team-details">
+                          <img src="imagenes/verdes.jpeg" alt="Club A Escudo" />
+                          <div class="team-name">Verdes Bremen</div>
+                        </div>
+                        <div class="score-inline">4</div>
+                      </div>
+                      <div class="team">
+                        <div class="team-details">
+                          <img src="imagenes/Monos.jpeg" alt="Club B Escudo" />
+                          <div class="team-name">Monos FC</div>
+                        </div>
+                        <div class="score-inline">7</div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Partido 4 -->
+                  <div class="match" tabindex="0">
+                    <div class="teams">
+                      <div class="team">
+                        <div class="team-details">
+                          <img src="imagenes/flemin.jpeg" alt="Club A Escudo" />
+                          <div class="team-name">Flemingo</div>
+                        </div>
+                        <div class="score-inline">99</div>
+                      </div>
+                      <div class="team">
+                        <div class="team-details">
+                          <img src="imagenes/correas.jpeg" alt="Club B Escudo" />
+                          <div class="team-name">Correas SAD</div>
+                        </div>
+                        <div class="score-inline">69</div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Partido 5 -->
+                  <div class="match" tabindex="0">
+                    <div class="teams">
+                      <div class="team">
+                        <div class="team-details">
+                          <img src="imagenes/choco.jpeg" alt="Club A Escudo" />
+                          <div class="team-name">Shiokolatikohs UD</div>
+                        </div>
+                        <div class="score-inline">0</div>
+                      </div>
+                      <div class="team">
+                        <div class="team-details">
+                          <img src="imagenes/bufandas.jpeg" alt="Club B Escudo" />
+                          <div class="team-name">Bufandas FC</div>
+                        </div>
+                        <div class="score-inline">1</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="jornada hidden" id="jornada-4">
+                <div class="matchday">
+                  <!-- Partido 1 -->
+                  <div class="match" tabindex="0">
+                    <div class="teams">
+                      <div class="team">
+                        <div class="team-details">
+                          <img src="imagenes/cabra.jpeg" alt="Club A Escudo" />
+                          <div class="team-name">Lambs United</div>
+                        </div>
+                        <div class="score-inline">69</div>
+                      </div>
+                      <div class="team">
+                        <div class="team-details">
+                          <img src="imagenes/vive.jpeg" alt="Club B Escudo" />
+                          <div class="team-name">Vive Cluj</div>
+                        </div>
+                        <div class="score-inline">66</div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Partido 2 -->
+                  <div class="match" tabindex="0">
+                    <div class="teams">
+                      <div class="team">
+                        <div class="team-details">
+                          <img src="imagenes/retro.jpeg" alt="Club A Escudo" />
+                          <div class="team-name">Retrovisoneta</div>
+                        </div>
+                        <div class="score-inline">33</div>
+                      </div>
+                      <div class="team">
+                        <div class="team-details">
+                          <img
+                            src="imagenes/escudo berti.jpeg"
+                            alt="Club B Escudo"
+                          />
+                          <div class="team-name">Albertwin</div>
+                        </div>
+                        <div class="score-inline">31</div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Partido 3 -->
+                  <div class="match" tabindex="0">
+                    <div class="teams">
+                      <div class="team">
+                        <div class="team-details">
+                          <img src="imagenes/verdes.jpeg" alt="Club A Escudo" />
+                          <div class="team-name">Verdes Bremen</div>
+                        </div>
+                        <div class="score-inline">4</div>
+                      </div>
+                      <div class="team">
+                        <div class="team-details">
+                          <img src="imagenes/Monos.jpeg" alt="Club B Escudo" />
+                          <div class="team-name">Monos FC</div>
+                        </div>
+                        <div class="score-inline">7</div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Partido 4 -->
+                  <div class="match" tabindex="0">
+                    <div class="teams">
+                      <div class="team">
+                        <div class="team-details">
+                          <img src="imagenes/flemin.jpeg" alt="Club A Escudo" />
+                          <div class="team-name">Flemingo</div>
+                        </div>
+                        <div class="score-inline">99</div>
+                      </div>
+                      <div class="team">
+                        <div class="team-details">
+                          <img src="imagenes/correas.jpeg" alt="Club B Escudo" />
+                          <div class="team-name">Correas SAD</div>
+                        </div>
+                        <div class="score-inline">69</div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Partido 5 -->
+                  <div class="match" tabindex="0">
+                    <div class="teams">
+                      <div class="team">
+                        <div class="team-details">
+                          <img src="imagenes/choco.jpeg" alt="Club A Escudo" />
+                          <div class="team-name">Shiokolatikohs UD</div>
+                        </div>
+                        <div class="score-inline">0</div>
+                      </div>
+                      <div class="team">
+                        <div class="team-details">
+                          <img src="imagenes/bufandas.jpeg" alt="Club B Escudo" />
+                          <div class="team-name">Bufandas FC</div>
+                        </div>
+                        <div class="score-inline">1</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="jornada hidden" id="jornada-6">
+                <div class="matchday">
+                  <!-- Partido 1 -->
+                  <div class="match" tabindex="0">
+                    <div class="teams">
+                      <div class="team">
+                        <div class="team-details">
+                          <img src="imagenes/cabra.jpeg" alt="Club A Escudo" />
+                          <div class="team-name">Lambs United</div>
+                        </div>
+                        <div class="score-inline">69</div>
+                      </div>
+                      <div class="team">
+                        <div class="team-details">
+                          <img src="imagenes/vive.jpeg" alt="Club B Escudo" />
+                          <div class="team-name">Vive Cluj</div>
+                        </div>
+                        <div class="score-inline">66</div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Partido 2 -->
+                  <div class="match" tabindex="0">
+                    <div class="teams">
+                      <div class="team">
+                        <div class="team-details">
+                          <img src="imagenes/retro.jpeg" alt="Club A Escudo" />
+                          <div class="team-name">Retrovisoneta</div>
+                        </div>
+                        <div class="score-inline">33</div>
+                      </div>
+                      <div class="team">
+                        <div class="team-details">
+                          <img
+                            src="imagenes/escudo berti.jpeg"
+                            alt="Club B Escudo"
+                          />
+                          <div class="team-name">Albertwin</div>
+                        </div>
+                        <div class="score-inline">31</div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Partido 3 -->
+                  <div class="match" tabindex="0">
+                    <div class="teams">
+                      <div class="team">
+                        <div class="team-details">
+                          <img src="imagenes/verdes.jpeg" alt="Club A Escudo" />
+                          <div class="team-name">Verdes Bremen</div>
+                        </div>
+                        <div class="score-inline">4</div>
+                      </div>
+                      <div class="team">
+                        <div class="team-details">
+                          <img src="imagenes/Monos.jpeg" alt="Club B Escudo" />
+                          <div class="team-name">Monos FC</div>
+                        </div>
+                        <div class="score-inline">7</div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Partido 4 -->
+                  <div class="match" tabindex="0">
+                    <div class="teams">
+                      <div class="team">
+                        <div class="team-details">
+                          <img src="imagenes/flemin.jpeg" alt="Club A Escudo" />
+                          <div class="team-name">Flemingo</div>
+                        </div>
+                        <div class="score-inline">99</div>
+                      </div>
+                      <div class="team">
+                        <div class="team-details">
+                          <img src="imagenes/correas.jpeg" alt="Club B Escudo" />
+                          <div class="team-name">Correas SAD</div>
+                        </div>
+                        <div class="score-inline">69</div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Partido 5 -->
+                  <div class="match" tabindex="0">
+                    <div class="teams">
+                      <div class="team">
+                        <div class="team-details">
+                          <img src="imagenes/choco.jpeg" alt="Club A Escudo" />
+                          <div class="team-name">Shiokolatikohs UD</div>
+                        </div>
+                        <div class="score-inline">0</div>
+                      </div>
+                      <div class="team">
+                        <div class="team-details">
+                          <img src="imagenes/bufandas.jpeg" alt="Club B Escudo" />
+                          <div class="team-name">Bufandas FC</div>
+                        </div>
+                        <div class="score-inline">1</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="jornada hidden" id="jornada-7">
+                <div class="matchday">
+                  <!-- Partido 1 -->
+                  <div class="match" tabindex="0">
+                    <div class="teams">
+                      <div class="team">
+                        <div class="team-details">
+                          <img src="imagenes/cabra.jpeg" alt="Club A Escudo" />
+                          <div class="team-name">Lambs United</div>
+                        </div>
+                        <div class="score-inline">69</div>
+                      </div>
+                      <div class="team">
+                        <div class="team-details">
+                          <img src="imagenes/vive.jpeg" alt="Club B Escudo" />
+                          <div class="team-name">Vive Cluj</div>
+                        </div>
+                        <div class="score-inline">66</div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Partido 2 -->
+                  <div class="match" tabindex="0">
+                    <div class="teams">
+                      <div class="team">
+                        <div class="team-details">
+                          <img src="imagenes/retro.jpeg" alt="Club A Escudo" />
+                          <div class="team-name">Retrovisoneta</div>
+                        </div>
+                        <div class="score-inline">33</div>
+                      </div>
+                      <div class="team">
+                        <div class="team-details">
+                          <img
+                            src="imagenes/escudo berti.jpeg"
+                            alt="Club B Escudo"
+                          />
+                          <div class="team-name">Albertwin</div>
+                        </div>
+                        <div class="score-inline">31</div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Partido 3 -->
+                  <div class="match" tabindex="0">
+                    <div class="teams">
+                      <div class="team">
+                        <div class="team-details">
+                          <img src="imagenes/verdes.jpeg" alt="Club A Escudo" />
+                          <div class="team-name">Verdes Bremen</div>
+                        </div>
+                        <div class="score-inline">4</div>
+                      </div>
+                      <div class="team">
+                        <div class="team-details">
+                          <img src="imagenes/Monos.jpeg" alt="Club B Escudo" />
+                          <div class="team-name">Monos FC</div>
+                        </div>
+                        <div class="score-inline">7</div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Partido 4 -->
+                  <div class="match" tabindex="0">
+                    <div class="teams">
+                      <div class="team">
+                        <div class="team-details">
+                          <img src="imagenes/flemin.jpeg" alt="Club A Escudo" />
+                          <div class="team-name">Flemingo</div>
+                        </div>
+                        <div class="score-inline">99</div>
+                      </div>
+                      <div class="team">
+                        <div class="team-details">
+                          <img src="imagenes/correas.jpeg" alt="Club B Escudo" />
+                          <div class="team-name">Correas SAD</div>
+                        </div>
+                        <div class="score-inline">69</div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Partido 5 -->
+                  <div class="match" tabindex="0">
+                    <div class="teams">
+                      <div class="team">
+                        <div class="team-details">
+                          <img src="imagenes/choco.jpeg" alt="Club A Escudo" />
+                          <div class="team-name">Shiokolatikohs UD</div>
+                        </div>
+                        <div class="score-inline">0</div>
+                      </div>
+                      <div class="team">
+                        <div class="team-details">
+                          <img src="imagenes/bufandas.jpeg" alt="Club B Escudo" />
+                          <div class="team-name">Bufandas FC</div>
+                        </div>
+                        <div class="score-inline">1</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="jornada hidden" id="jornada-8">
+                <div class="matchday">
+                  <!-- Partido 1 -->
+                  <div class="match" tabindex="0">
+                    <div class="teams">
+                      <div class="team">
+                        <div class="team-details">
+                          <img src="imagenes/cabra.jpeg" alt="Club A Escudo" />
+                          <div class="team-name">Lambs United</div>
+                        </div>
+                        <div class="score-inline">69</div>
+                      </div>
+                      <div class="team">
+                        <div class="team-details">
+                          <img src="imagenes/vive.jpeg" alt="Club B Escudo" />
+                          <div class="team-name">Vive Cluj</div>
+                        </div>
+                        <div class="score-inline">66</div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Partido 2 -->
+                  <div class="match" tabindex="0">
+                    <div class="teams">
+                      <div class="team">
+                        <div class="team-details">
+                          <img src="imagenes/retro.jpeg" alt="Club A Escudo" />
+                          <div class="team-name">Retrovisoneta</div>
+                        </div>
+                        <div class="score-inline">33</div>
+                      </div>
+                      <div class="team">
+                        <div class="team-details">
+                          <img
+                            src="imagenes/escudo berti.jpeg"
+                            alt="Club B Escudo"
+                          />
+                          <div class="team-name">Albertwin</div>
+                        </div>
+                        <div class="score-inline">31</div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Partido 3 -->
+                  <div class="match" tabindex="0">
+                    <div class="teams">
+                      <div class="team">
+                        <div class="team-details">
+                          <img src="imagenes/verdes.jpeg" alt="Club A Escudo" />
+                          <div class="team-name">Verdes Bremen</div>
+                        </div>
+                        <div class="score-inline">4</div>
+                      </div>
+                      <div class="team">
+                        <div class="team-details">
+                          <img src="imagenes/Monos.jpeg" alt="Club B Escudo" />
+                          <div class="team-name">Monos FC</div>
+                        </div>
+                        <div class="score-inline">7</div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Partido 4 -->
+                  <div class="match" tabindex="0">
+                    <div class="teams">
+                      <div class="team">
+                        <div class="team-details">
+                          <img src="imagenes/flemin.jpeg" alt="Club A Escudo" />
+                          <div class="team-name">Flemingo</div>
+                        </div>
+                        <div class="score-inline">99</div>
+                      </div>
+                      <div class="team">
+                        <div class="team-details">
+                          <img src="imagenes/correas.jpeg" alt="Club B Escudo" />
+                          <div class="team-name">Correas SAD</div>
+                        </div>
+                        <div class="score-inline">69</div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Partido 5 -->
+                  <div class="match" tabindex="0">
+                    <div class="teams">
+                      <div class="team">
+                        <div class="team-details">
+                          <img src="imagenes/choco.jpeg" alt="Club A Escudo" />
+                          <div class="team-name">Shiokolatikohs UD</div>
+                        </div>
+                        <div class="score-inline">0</div>
+                      </div>
+                      <div class="team">
+                        <div class="team-details">
+                          <img src="imagenes/bufandas.jpeg" alt="Club B Escudo" />
+                          <div class="team-name">Bufandas FC</div>
+                        </div>
+                        <div class="score-inline">1</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="jornada hidden" id="jornada-9">
+                <div class="matchday">
+                  <!-- Partido 1 -->
+                  <div class="match" tabindex="0">
+                    <div class="teams">
+                      <div class="team">
+                        <div class="team-details">
+                          <img src="imagenes/cabra.jpeg" alt="Club A Escudo" />
+                          <div class="team-name">Lambs United</div>
+                        </div>
+                        <div class="score-inline">69</div>
+                      </div>
+                      <div class="team">
+                        <div class="team-details">
+                          <img src="imagenes/vive.jpeg" alt="Club B Escudo" />
+                          <div class="team-name">Vive Cluj</div>
+                        </div>
+                        <div class="score-inline">66</div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Partido 2 -->
+                  <div class="match" tabindex="0">
+                    <div class="teams">
+                      <div class="team">
+                        <div class="team-details">
+                          <img src="imagenes/retro.jpeg" alt="Club A Escudo" />
+                          <div class="team-name">Retrovisoneta</div>
+                        </div>
+                        <div class="score-inline">33</div>
+                      </div>
+                      <div class="team">
+                        <div class="team-details">
+                          <img
+                            src="imagenes/escudo berti.jpeg"
+                            alt="Club B Escudo"
+                          />
+                          <div class="team-name">Albertwin</div>
+                        </div>
+                        <div class="score-inline">31</div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Partido 3 -->
+                  <div class="match" tabindex="0">
+                    <div class="teams">
+                      <div class="team">
+                        <div class="team-details">
+                          <img src="imagenes/verdes.jpeg" alt="Club A Escudo" />
+                          <div class="team-name">Verdes Bremen</div>
+                        </div>
+                        <div class="score-inline">4</div>
+                      </div>
+                      <div class="team">
+                        <div class="team-details">
+                          <img src="imagenes/Monos.jpeg" alt="Club B Escudo" />
+                          <div class="team-name">Monos FC</div>
+                        </div>
+                        <div class="score-inline">7</div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Partido 4 -->
+                  <div class="match" tabindex="0">
+                    <div class="teams">
+                      <div class="team">
+                        <div class="team-details">
+                          <img src="imagenes/flemin.jpeg" alt="Club A Escudo" />
+                          <div class="team-name">Flemingo</div>
+                        </div>
+                        <div class="score-inline">99</div>
+                      </div>
+                      <div class="team">
+                        <div class="team-details">
+                          <img src="imagenes/correas.jpeg" alt="Club B Escudo" />
+                          <div class="team-name">Correas SAD</div>
+                        </div>
+                        <div class="score-inline">69</div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Partido 5 -->
+                  <div class="match" tabindex="0">
+                    <div class="teams">
+                      <div class="team">
+                        <div class="team-details">
+                          <img src="imagenes/choco.jpeg" alt="Club A Escudo" />
+                          <div class="team-name">Shiokolatikohs UD</div>
+                        </div>
+                        <div class="score-inline">0</div>
+                      </div>
+                      <div class="team">
+                        <div class="team-details">
+                          <img src="imagenes/bufandas.jpeg" alt="Club B Escudo" />
+                          <div class="team-name">Bufandas FC</div>
+                        </div>
+                        <div class="score-inline">1</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="jornada hidden" id="jornada-10">
+                <div class="matchday">
+                  <!-- Partido 1 -->
+                  <div class="match" tabindex="0">
+                    <div class="teams">
+                      <div class="team">
+                        <div class="team-details">
+                          <img src="imagenes/cabra.jpeg" alt="Club A Escudo" />
+                          <div class="team-name">Lambs United</div>
+                        </div>
+                        <div class="score-inline">69</div>
+                      </div>
+                      <div class="team">
+                        <div class="team-details">
+                          <img src="imagenes/vive.jpeg" alt="Club B Escudo" />
+                          <div class="team-name">Vive Cluj</div>
+                        </div>
+                        <div class="score-inline">66</div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Partido 2 -->
+                  <div class="match" tabindex="0">
+                    <div class="teams">
+                      <div class="team">
+                        <div class="team-details">
+                          <img src="imagenes/retro.jpeg" alt="Club A Escudo" />
+                          <div class="team-name">Retrovisoneta</div>
+                        </div>
+                        <div class="score-inline">33</div>
+                      </div>
+                      <div class="team">
+                        <div class="team-details">
+                          <img
+                            src="imagenes/escudo berti.jpeg"
+                            alt="Club B Escudo"
+                          />
+                          <div class="team-name">Albertwin</div>
+                        </div>
+                        <div class="score-inline">31</div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Partido 3 -->
+                  <div class="match" tabindex="0">
+                    <div class="teams">
+                      <div class="team">
+                        <div class="team-details">
+                          <img src="imagenes/verdes.jpeg" alt="Club A Escudo" />
+                          <div class="team-name">Verdes Bremen</div>
+                        </div>
+                        <div class="score-inline">4</div>
+                      </div>
+                      <div class="team">
+                        <div class="team-details">
+                          <img src="imagenes/Monos.jpeg" alt="Club B Escudo" />
+                          <div class="team-name">Monos FC</div>
+                        </div>
+                        <div class="score-inline">7</div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Partido 4 -->
+                  <div class="match" tabindex="0">
+                    <div class="teams">
+                      <div class="team">
+                        <div class="team-details">
+                          <img src="imagenes/flemin.jpeg" alt="Club A Escudo" />
+                          <div class="team-name">Flemingo</div>
+                        </div>
+                        <div class="score-inline">99</div>
+                      </div>
+                      <div class="team">
+                        <div class="team-details">
+                          <img src="imagenes/correas.jpeg" alt="Club B Escudo" />
+                          <div class="team-name">Correas SAD</div>
+                        </div>
+                        <div class="score-inline">69</div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Partido 5 -->
+                  <div class="match" tabindex="0">
+                    <div class="teams">
+                      <div class="team">
+                        <div class="team-details">
+                          <img src="imagenes/choco.jpeg" alt="Club A Escudo" />
+                          <div class="team-name">Shiokolatikohs UD</div>
+                        </div>
+                        <div class="score-inline">0</div>
+                      </div>
+                      <div class="team">
+                        <div class="team-details">
+                          <img src="imagenes/bufandas.jpeg" alt="Club B Escudo" />
+                          <div class="team-name">Bufandas FC</div>
+                        </div>
+                        <div class="score-inline">1</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="jornada hidden" id="jornada-11">
+                <div class="matchday">
+                  <!-- Partido 1 -->
+                  <div class="match" tabindex="0">
+                    <div class="teams">
+                      <div class="team">
+                        <div class="team-details">
+                          <img src="imagenes/cabra.jpeg" alt="Club A Escudo" />
+                          <div class="team-name">Lambs United</div>
+                        </div>
+                        <div class="score-inline">69</div>
+                      </div>
+                      <div class="team">
+                        <div class="team-details">
+                          <img src="imagenes/vive.jpeg" alt="Club B Escudo" />
+                          <div class="team-name">Vive Cluj</div>
+                        </div>
+                        <div class="score-inline">66</div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Partido 2 -->
+                  <div class="match" tabindex="0">
+                    <div class="teams">
+                      <div class="team">
+                        <div class="team-details">
+                          <img src="imagenes/retro.jpeg" alt="Club A Escudo" />
+                          <div class="team-name">Retrovisoneta</div>
+                        </div>
+                        <div class="score-inline">33</div>
+                      </div>
+                      <div class="team">
+                        <div class="team-details">
+                          <img
+                            src="imagenes/escudo berti.jpeg"
+                            alt="Club B Escudo"
+                          />
+                          <div class="team-name">Albertwin</div>
+                        </div>
+                        <div class="score-inline">31</div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Partido 3 -->
+                  <div class="match" tabindex="0">
+                    <div class="teams">
+                      <div class="team">
+                        <div class="team-details">
+                          <img src="imagenes/verdes.jpeg" alt="Club A Escudo" />
+                          <div class="team-name">Verdes Bremen</div>
+                        </div>
+                        <div class="score-inline">4</div>
+                      </div>
+                      <div class="team">
+                        <div class="team-details">
+                          <img src="imagenes/Monos.jpeg" alt="Club B Escudo" />
+                          <div class="team-name">Monos FC</div>
+                        </div>
+                        <div class="score-inline">7</div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Partido 4 -->
+                  <div class="match" tabindex="0">
+                    <div class="teams">
+                      <div class="team">
+                        <div class="team-details">
+                          <img src="imagenes/flemin.jpeg" alt="Club A Escudo" />
+                          <div class="team-name">Flemingo</div>
+                        </div>
+                        <div class="score-inline">99</div>
+                      </div>
+                      <div class="team">
+                        <div class="team-details">
+                          <img src="imagenes/correas.jpeg" alt="Club B Escudo" />
+                          <div class="team-name">Correas SAD</div>
+                        </div>
+                        <div class="score-inline">69</div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Partido 5 -->
+                  <div class="match" tabindex="0">
+                    <div class="teams">
+                      <div class="team">
+                        <div class="team-details">
+                          <img src="imagenes/choco.jpeg" alt="Club A Escudo" />
+                          <div class="team-name">Shiokolatikohs UD</div>
+                        </div>
+                        <div class="score-inline">0</div>
+                      </div>
+                      <div class="team">
+                        <div class="team-details">
+                          <img src="imagenes/bufandas.jpeg" alt="Club B Escudo" />
+                          <div class="team-name">Bufandas FC</div>
+                        </div>
+                        <div class="score-inline">1</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="jornada hidden" id="jornada-12">
+                <div class="matchday">
+                  <!-- Partido 1 -->
+                  <div class="match" tabindex="0">
+                    <div class="teams">
+                      <div class="team">
+                        <div class="team-details">
+                          <img src="imagenes/cabra.jpeg" alt="Club A Escudo" />
+                          <div class="team-name">Lambs United</div>
+                        </div>
+                        <div class="score-inline">69</div>
+                      </div>
+                      <div class="team">
+                        <div class="team-details">
+                          <img src="imagenes/vive.jpeg" alt="Club B Escudo" />
+                          <div class="team-name">Vive Cluj</div>
+                        </div>
+                        <div class="score-inline">66</div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Partido 2 -->
+                  <div class="match" tabindex="0">
+                    <div class="teams">
+                      <div class="team">
+                        <div class="team-details">
+                          <img src="imagenes/retro.jpeg" alt="Club A Escudo" />
+                          <div class="team-name">Retrovisoneta</div>
+                        </div>
+                        <div class="score-inline">33</div>
+                      </div>
+                      <div class="team">
+                        <div class="team-details">
+                          <img
+                            src="imagenes/escudo berti.jpeg"
+                            alt="Club B Escudo"
+                          />
+                          <div class="team-name">Albertwin</div>
+                        </div>
+                        <div class="score-inline">31</div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Partido 3 -->
+                  <div class="match" tabindex="0">
+                    <div class="teams">
+                      <div class="team">
+                        <div class="team-details">
+                          <img src="imagenes/verdes.jpeg" alt="Club A Escudo" />
+                          <div class="team-name">Verdes Bremen</div>
+                        </div>
+                        <div class="score-inline">4</div>
+                      </div>
+                      <div class="team">
+                        <div class="team-details">
+                          <img src="imagenes/Monos.jpeg" alt="Club B Escudo" />
+                          <div class="team-name">Monos FC</div>
+                        </div>
+                        <div class="score-inline">7</div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Partido 4 -->
+                  <div class="match" tabindex="0">
+                    <div class="teams">
+                      <div class="team">
+                        <div class="team-details">
+                          <img src="imagenes/flemin.jpeg" alt="Club A Escudo" />
+                          <div class="team-name">Flemingo</div>
+                        </div>
+                        <div class="score-inline">99</div>
+                      </div>
+                      <div class="team">
+                        <div class="team-details">
+                          <img src="imagenes/correas.jpeg" alt="Club B Escudo" />
+                          <div class="team-name">Correas SAD</div>
+                        </div>
+                        <div class="score-inline">69</div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Partido 5 -->
+                  <div class="match" tabindex="0">
+                    <div class="teams">
+                      <div class="team">
+                        <div class="team-details">
+                          <img src="imagenes/choco.jpeg" alt="Club A Escudo" />
+                          <div class="team-name">Shiokolatikohs UD</div>
+                        </div>
+                        <div class="score-inline">0</div>
+                      </div>
+                      <div class="team">
+                        <div class="team-details">
+                          <img src="imagenes/bufandas.jpeg" alt="Club B Escudo" />
+                          <div class="team-name">Bufandas FC</div>
+                        </div>
+                        <div class="score-inline">1</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="jornada hidden" id="jornada-13">
+                <div class="matchday">
+                  <!-- Partido 1 -->
+                  <div class="match" tabindex="0">
+                    <div class="teams">
+                      <div class="team">
+                        <div class="team-details">
+                          <img src="imagenes/cabra.jpeg" alt="Club A Escudo" />
+                          <div class="team-name">Lambs United</div>
+                        </div>
+                        <div class="score-inline">69</div>
+                      </div>
+                      <div class="team">
+                        <div class="team-details">
+                          <img src="imagenes/vive.jpeg" alt="Club B Escudo" />
+                          <div class="team-name">Vive Cluj</div>
+                        </div>
+                        <div class="score-inline">66</div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Partido 2 -->
+                  <div class="match" tabindex="0">
+                    <div class="teams">
+                      <div class="team">
+                        <div class="team-details">
+                          <img src="imagenes/retro.jpeg" alt="Club A Escudo" />
+                          <div class="team-name">Retrovisoneta</div>
+                        </div>
+                        <div class="score-inline">33</div>
+                      </div>
+                      <div class="team">
+                        <div class="team-details">
+                          <img
+                            src="imagenes/escudo berti.jpeg"
+                            alt="Club B Escudo"
+                          />
+                          <div class="team-name">Albertwin</div>
+                        </div>
+                        <div class="score-inline">31</div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Partido 3 -->
+                  <div class="match" tabindex="0">
+                    <div class="teams">
+                      <div class="team">
+                        <div class="team-details">
+                          <img src="imagenes/verdes.jpeg" alt="Club A Escudo" />
+                          <div class="team-name">Verdes Bremen</div>
+                        </div>
+                        <div class="score-inline">4</div>
+                      </div>
+                      <div class="team">
+                        <div class="team-details">
+                          <img src="imagenes/Monos.jpeg" alt="Club B Escudo" />
+                          <div class="team-name">Monos FC</div>
+                        </div>
+                        <div class="score-inline">7</div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Partido 4 -->
+                  <div class="match" tabindex="0">
+                    <div class="teams">
+                      <div class="team">
+                        <div class="team-details">
+                          <img src="imagenes/flemin.jpeg" alt="Club A Escudo" />
+                          <div class="team-name">Flemingo</div>
+                        </div>
+                        <div class="score-inline">99</div>
+                      </div>
+                      <div class="team">
+                        <div class="team-details">
+                          <img src="imagenes/correas.jpeg" alt="Club B Escudo" />
+                          <div class="team-name">Correas SAD</div>
+                        </div>
+                        <div class="score-inline">69</div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Partido 5 -->
+                  <div class="match" tabindex="0">
+                    <div class="teams">
+                      <div class="team">
+                        <div class="team-details">
+                          <img src="imagenes/choco.jpeg" alt="Club A Escudo" />
+                          <div class="team-name">Shiokolatikohs UD</div>
+                        </div>
+                        <div class="score-inline">0</div>
+                      </div>
+                      <div class="team">
+                        <div class="team-details">
+                          <img src="imagenes/bufandas.jpeg" alt="Club B Escudo" />
+                          <div class="team-name">Bufandas FC</div>
+                        </div>
+                        <div class="score-inline">1</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="jornada hidden" id="jornada-14">
+                <div class="matchday">
+                  <!-- Partido 1 -->
+                  <div class="match" tabindex="0">
+                    <div class="teams">
+                      <div class="team">
+                        <div class="team-details">
+                          <img src="imagenes/cabra.jpeg" alt="Club A Escudo" />
+                          <div class="team-name">Lambs United</div>
+                        </div>
+                        <div class="score-inline">69</div>
+                      </div>
+                      <div class="team">
+                        <div class="team-details">
+                          <img src="imagenes/vive.jpeg" alt="Club B Escudo" />
+                          <div class="team-name">Vive Cluj</div>
+                        </div>
+                        <div class="score-inline">66</div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Partido 2 -->
+                  <div class="match" tabindex="0">
+                    <div class="teams">
+                      <div class="team">
+                        <div class="team-details">
+                          <img src="imagenes/retro.jpeg" alt="Club A Escudo" />
+                          <div class="team-name">Retrovisoneta</div>
+                        </div>
+                        <div class="score-inline">33</div>
+                      </div>
+                      <div class="team">
+                        <div class="team-details">
+                          <img
+                            src="imagenes/escudo berti.jpeg"
+                            alt="Club B Escudo"
+                          />
+                          <div class="team-name">Albertwin</div>
+                        </div>
+                        <div class="score-inline">31</div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Partido 3 -->
+                  <div class="match" tabindex="0">
+                    <div class="teams">
+                      <div class="team">
+                        <div class="team-details">
+                          <img src="imagenes/verdes.jpeg" alt="Club A Escudo" />
+                          <div class="team-name">Verdes Bremen</div>
+                        </div>
+                        <div class="score-inline">4</div>
+                      </div>
+                      <div class="team">
+                        <div class="team-details">
+                          <img src="imagenes/Monos.jpeg" alt="Club B Escudo" />
+                          <div class="team-name">Monos FC</div>
+                        </div>
+                        <div class="score-inline">7</div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Partido 4 -->
+                  <div class="match" tabindex="0">
+                    <div class="teams">
+                      <div class="team">
+                        <div class="team-details">
+                          <img src="imagenes/flemin.jpeg" alt="Club A Escudo" />
+                          <div class="team-name">Flemingo</div>
+                        </div>
+                        <div class="score-inline">99</div>
+                      </div>
+                      <div class="team">
+                        <div class="team-details">
+                          <img src="imagenes/correas.jpeg" alt="Club B Escudo" />
+                          <div class="team-name">Correas SAD</div>
+                        </div>
+                        <div class="score-inline">69</div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Partido 5 -->
+                  <div class="match" tabindex="0">
+                    <div class="teams">
+                      <div class="team">
+                        <div class="team-details">
+                          <img src="imagenes/choco.jpeg" alt="Club A Escudo" />
+                          <div class="team-name">Shiokolatikohs UD</div>
+                        </div>
+                        <div class="score-inline">0</div>
+                      </div>
+                      <div class="team">
+                        <div class="team-details">
+                          <img src="imagenes/bufandas.jpeg" alt="Club B Escudo" />
+                          <div class="team-name">Bufandas FC</div>
+                        </div>
+                        <div class="score-inline">1</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="jornada hidden" id="jornada-15">
+               <div class="matchday">
+                  <!-- Partido 1 -->
+                  <div class="match" tabindex="0">
+                    <div class="teams">
+                      <div class="team">
+                        <div class="team-details">
+                          <img src="imagenes/cabra.jpeg" alt="Club A Escudo" />
+                          <div class="team-name">Lambs United</div>
+                        </div>
+                        <div class="score-inline">69</div>
+                      </div>
+                      <div class="team">
+                        <div class="team-details">
+                          <img src="imagenes/vive.jpeg" alt="Club B Escudo" />
+                          <div class="team-name">Vive Cluj</div>
+                        </div>
+                        <div class="score-inline">66</div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Partido 2 -->
+                  <div class="match" tabindex="0">
+                    <div class="teams">
+                      <div class="team">
+                        <div class="team-details">
+                          <img src="imagenes/retro.jpeg" alt="Club A Escudo" />
+                          <div class="team-name">Retrovisoneta</div>
+                        </div>
+                        <div class="score-inline">33</div>
+                      </div>
+                      <div class="team">
+                        <div class="team-details">
+                          <img
+                            src="imagenes/escudo berti.jpeg"
+                            alt="Club B Escudo"
+                          />
+                          <div class="team-name">Albertwin</div>
+                        </div>
+                        <div class="score-inline">31</div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Partido 3 -->
+                  <div class="match" tabindex="0">
+                    <div class="teams">
+                      <div class="team">
+                        <div class="team-details">
+                          <img src="imagenes/verdes.jpeg" alt="Club A Escudo" />
+                          <div class="team-name">Verdes Bremen</div>
+                        </div>
+                        <div class="score-inline">4</div>
+                      </div>
+                      <div class="team">
+                        <div class="team-details">
+                          <img src="imagenes/Monos.jpeg" alt="Club B Escudo" />
+                          <div class="team-name">Monos FC</div>
+                        </div>
+                        <div class="score-inline">7</div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Partido 4 -->
+                  <div class="match" tabindex="0">
+                    <div class="teams">
+                      <div class="team">
+                        <div class="team-details">
+                          <img src="imagenes/flemin.jpeg" alt="Club A Escudo" />
+                          <div class="team-name">Flemingo</div>
+                        </div>
+                        <div class="score-inline">99</div>
+                      </div>
+                      <div class="team">
+                        <div class="team-details">
+                          <img src="imagenes/correas.jpeg" alt="Club B Escudo" />
+                          <div class="team-name">Correas SAD</div>
+                        </div>
+                        <div class="score-inline">69</div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Partido 5 -->
+                  <div class="match" tabindex="0">
+                    <div class="teams">
+                      <div class="team">
+                        <div class="team-details">
+                          <img src="imagenes/choco.jpeg" alt="Club A Escudo" />
+                          <div class="team-name">Shiokolatikohs UD</div>
+                        </div>
+                        <div class="score-inline">0</div>
+                      </div>
+                      <div class="team">
+                        <div class="team-details">
+                          <img src="imagenes/bufandas.jpeg" alt="Club B Escudo" />
+                          <div class="team-name">Bufandas FC</div>
+                        </div>
+                        <div class="score-inline">1</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="jornada hidden" id="jornada-16">
+                <div class="matchday">
+                  <!-- Partido 1 -->
+                  <div class="match" tabindex="0">
+                    <div class="teams">
+                      <div class="team">
+                        <div class="team-details">
+                          <img src="imagenes/cabra.jpeg" alt="Club A Escudo" />
+                          <div class="team-name">Lambs United</div>
+                        </div>
+                        <div class="score-inline">69</div>
+                      </div>
+                      <div class="team">
+                        <div class="team-details">
+                          <img src="imagenes/vive.jpeg" alt="Club B Escudo" />
+                          <div class="team-name">Vive Cluj</div>
+                        </div>
+                        <div class="score-inline">66</div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Partido 2 -->
+                  <div class="match" tabindex="0">
+                    <div class="teams">
+                      <div class="team">
+                        <div class="team-details">
+                          <img src="imagenes/retro.jpeg" alt="Club A Escudo" />
+                          <div class="team-name">Retrovisoneta</div>
+                        </div>
+                        <div class="score-inline">33</div>
+                      </div>
+                      <div class="team">
+                        <div class="team-details">
+                          <img
+                            src="imagenes/escudo berti.jpeg"
+                            alt="Club B Escudo"
+                          />
+                          <div class="team-name">Albertwin</div>
+                        </div>
+                        <div class="score-inline">31</div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Partido 3 -->
+                  <div class="match" tabindex="0">
+                    <div class="teams">
+                      <div class="team">
+                        <div class="team-details">
+                          <img src="imagenes/verdes.jpeg" alt="Club A Escudo" />
+                          <div class="team-name">Verdes Bremen</div>
+                        </div>
+                        <div class="score-inline">4</div>
+                      </div>
+                      <div class="team">
+                        <div class="team-details">
+                          <img src="imagenes/Monos.jpeg" alt="Club B Escudo" />
+                          <div class="team-name">Monos FC</div>
+                        </div>
+                        <div class="score-inline">7</div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Partido 4 -->
+                  <div class="match" tabindex="0">
+                    <div class="teams">
+                      <div class="team">
+                        <div class="team-details">
+                          <img src="imagenes/flemin.jpeg" alt="Club A Escudo" />
+                          <div class="team-name">Flemingo</div>
+                        </div>
+                        <div class="score-inline">99</div>
+                      </div>
+                      <div class="team">
+                        <div class="team-details">
+                          <img src="imagenes/correas.jpeg" alt="Club B Escudo" />
+                          <div class="team-name">Correas SAD</div>
+                        </div>
+                        <div class="score-inline">69</div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Partido 5 -->
+                  <div class="match" tabindex="0">
+                    <div class="teams">
+                      <div class="team">
+                        <div class="team-details">
+                          <img src="imagenes/choco.jpeg" alt="Club A Escudo" />
+                          <div class="team-name">Shiokolatikohs UD</div>
+                        </div>
+                        <div class="score-inline">0</div>
+                      </div>
+                      <div class="team">
+                        <div class="team-details">
+                          <img src="imagenes/bufandas.jpeg" alt="Club B Escudo" />
+                          <div class="team-name">Bufandas FC</div>
+                        </div>
+                        <div class="score-inline">1</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+
+
             </div>
+
+
           </div>
 
           <!-- Pestaña Clasificación -->
           <div class="liga-section hidden" id="clasificacion">
-            <div class="clasificacion-container" id="contenedorTabla">
-              <!-- Botón de cierre en modo fullscreen -->
-              <button id="closeTabla" class="close-tabla hidden">✕</button>
-              <table class="tabla-clasificacion" id="tablaClasificacion">
-                <thead>
-                  <tr>
-                    <th scope="col">Clubs</th>
-                    <th scope="col">Pj</th>
-                    <th scope="col">V</th>
-                    <th scope="col">E</th>
-                    <th scope="col">D</th>
-                    <th scope="col">Pts</th>
-                    <th scope="col">F</th>
-                    <th scope="col">Últimos</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td class="club-cell">
-                      <img
-                        src="imagenes/cabra.jpeg"
-                        alt="Escudo Cabra"
-                        class="escudo"
-                      />
-                      LAMBS UNITED
-                    </td>
-                    <td>16</td>
-                    <td>10</td>
-                    <td>3</td>
-                    <td>3</td>
-                    <td>33</td>
-                    <td>48</td>
-                    <td>
-                      <span class="ultimo victoria" title="Victoria"></span>
-                      <span class="ultimo empate" title="Empate"></span>
-                      <span class="ultimo derrota" title="Derrota"></span>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td class="club-cell">
-                      <img
-                        src="imagenes/retro.jpeg"
-                        alt="Escudo RETROVISONETA"
-                        class="escudo"
-                      />
-                      RETROVISONETA
-                    </td>
-                    <td>16</td>
-                    <td>10</td>
-                    <td>3</td>
-                    <td>3</td>
-                    <td>33</td>
-                    <td>48</td>
-                    <td>
-                      <span class="ultimo victoria" title="Victoria"></span>
-                      <span class="ultimo empate" title="Empate"></span>
-                      <span class="ultimo empate" title="Empate"></span>
-                      <span class="ultimo empate" title="Empate"></span>
-                      <span class="ultimo derrota" title="Derrota"></span>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td class="club-cell">
-                      <img
-                        src="imagenes/Monos.jpeg"
-                        alt="Escudo MONOS FC"
-                        class="escudo"
-                      />
-                      MONOS FC
-                    </td>
-                    <td>16</td>
-                    <td>10</td>
-                    <td>3</td>
-                    <td>3</td>
-                    <td>33</td>
-                    <td>48</td>
-                    <td>
-                      <span class="ultimo victoria" title="Victoria"></span>
-                      <span class="ultimo empate" title="Empate"></span>
-                      <span class="ultimo derrota" title="Derrota"></span>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td class="club-cell">
-                      <img
-                        src="imagenes/vive.jpeg"
-                        alt="Escudo VIVE CLUJ"
-                        class="escudo"
-                      />
-                      VIVE CLUJ
-                    </td>
-                    <td>16</td>
-                    <td>10</td>
-                    <td>3</td>
-                    <td>3</td>
-                    <td>33</td>
-                    <td>48</td>
-                    <td>
-                      <span class="ultimo victoria" title="Victoria"></span>
-                      <span class="ultimo empate" title="Empate"></span>
-                      <span class="ultimo derrota" title="Derrota"></span>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td class="club-cell">
-                      <img
-                        src="imagenes/correas.jpeg"
-                        alt="Escudo CORREAS SAD"
-                        class="escudo"
-                      />
-                      CORREAS SAD
-                    </td>
-                    <td>16</td>
-                    <td>10</td>
-                    <td>3</td>
-                    <td>3</td>
-                    <td>33</td>
-                    <td>48</td>
-                    <td>
-                      <span class="ultimo victoria" title="Victoria"></span>
-                      <span class="ultimo empate" title="Empate"></span>
-                      <span class="ultimo derrota" title="Derrota"></span>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td class="club-cell">
-                      <img
-                        src="imagenes/flemin.jpeg"
-                        alt="Escudo FLEMINGOS"
-                        class="escudo"
-                      />
-                      FLEMINGOS
-                    </td>
-                    <td>16</td>
-                    <td>10</td>
-                    <td>3</td>
-                    <td>3</td>
-                    <td>33</td>
-                    <td>48</td>
-                    <td>
-                      <span class="ultimo victoria" title="Victoria"></span>
-                      <span class="ultimo empate" title="Empate"></span>
-                      <span class="ultimo derrota" title="Derrota"></span>
-                    </td>
-                  </tr>
-                  <!-- …más filas si hace falta… -->
-                </tbody>
-              </table>
+              
             </div>
           </div>
-        </div>
       </section>
 
       <!-- ======================
@@ -441,6 +1796,7 @@
       </section>
       <section id="supercopa" class="hidden">
         <h2>Supercopa</h2>
+
       </section>
       <section id="champions" class="hidden">
         <h2>Champions</h2>
@@ -448,9 +1804,6 @@
 
 
 
-    <!-- ============================================================
-                    CREW
-      ============================================================= -->
 <!-- ============================================================
                     CREW
       ============================================================= -->
@@ -561,7 +1914,7 @@
           style="width: 45px; height: 45px;"
         />
       </button>
-      <!-- BOTÓN CREW (reglamento) -->
+      <!-- BOTÓN CREW -->
       <button onclick="goTo('crew')" aria-label="Crew">
         <img
           src="imagenes/crew.png"
@@ -580,5 +1933,41 @@
     <footer>
       <p>&copy; 2025 Saliditos Club</p>
     </footer>
+
+
+
+    <script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const btn = document.getElementById("btnAudio2");
+    const audio = document.getElementById("audioNoticia2");
+
+    function actualizarBoton() {
+      if (audio.paused) {
+        btn.textContent = "▶";        // icono “Play”
+        btn.classList.remove("playing");
+      } else {
+        btn.textContent = "⏸";       // icono “Pause”
+        btn.classList.add("playing");
+      }
+    }
+
+    // Inicializamos el estado del botón al cargar
+    actualizarBoton();
+
+    btn.addEventListener("click", () => {
+      if (audio.paused) {
+        audio.play().catch(err => {
+          console.warn("No se pudo reproducir el audio:", err);
+        });
+      } else {
+        audio.pause();
+      }
+      actualizarBoton();
+    });
+
+    // Cuando termine el audio, volvemos a icono “Play”
+    audio.addEventListener("ended", actualizarBoton);
+  });
+</script>
   </body>
 </html>
