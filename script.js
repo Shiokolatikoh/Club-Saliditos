@@ -242,29 +242,15 @@ function renderMainFloatingMenu() {
 // 7. NAVEGACIÓN DESDE BURBUJAS Y OCULTAR MENÚ FLOTANTE
 // ----------------------------------------------------
 function goTo(id) {
-  // 1) Ocultar todas las secciones
   document.querySelectorAll('main > section').forEach((sec) => {
     sec.classList.add('hidden');
     sec.classList.remove('visible');
   });
-
-  // 2) Mostrar la sección destino
   const destino = document.getElementById(id);
   if (destino) {
     destino.classList.remove('hidden');
     destino.classList.add('visible');
-
-    // ─────────────── Añadido: forzar scroll al TOPE de la sección ───────────────
-    // Opción A: con scrollIntoView
-    destino.scrollIntoView({ behavior: 'auto', block: 'start' });
-    // (block: 'start' asegura que la parte superior de 'destino' quede en la parte superior de la ventana)
-
-    // Si la sección tiene un contenedor interno con scroll propio, también podrías resetear eso:
-    // destino.scrollTop = 0;
-    // ────────────────────────────────────────────────────────────────────────────────
   }
-
-  // 3) Ocultar el menú flotante
   const menu = document.getElementById('menuFlotante');
   if (menu) {
     menu.classList.add('hidden');
@@ -298,7 +284,7 @@ const observer = new IntersectionObserver(
       }
     });
   },
-  { threshold: 0.2 }
+  { threshold: 0.4 }
 );
 
 // ----------------------------------------------------
@@ -571,16 +557,7 @@ window.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  // 10) Fullscreen en tabla de clasificación
-  contenedorTabla = document.getElementById('contenedorTabla');
-  btnCerrarTabla = document.getElementById('closeTabla');
-  if (contenedorTabla) {
-    contenedorTabla.addEventListener('click', abrirFullScreenTabla);
-  }
-  if (btnCerrarTabla) {
-    btnCerrarTabla.addEventListener('click', cerrarFullScreenTabla);
-  }
-
+  
   // 11) Renderizar grid de Clubs y su overlay
 clubsGrid = document.getElementById('clubsGrid');
 clubOverlay = document.getElementById('clubCardOverlay');
@@ -660,27 +637,9 @@ function acelerarAnimacion() {
   titulo.classList.add('acelerado');
   setTimeout(() => {
     titulo.classList.remove('acelerado');
-  }, 3000);
+  }, 300);
 }
 
-// ----------------------------------------------------
-// Funciones para fullscreen de tabla de clasificación
-// ----------------------------------------------------
-function abrirFullScreenTabla(event) {
-  if (!contenedorTabla.classList.contains('fullscreen')) {
-    contenedorTabla.classList.add('fullscreen');
-    btnCerrarTabla.classList.remove('hidden');
-    event.stopPropagation();
-  }
-}
-
-function cerrarFullScreenTabla(event) {
-  if (contenedorTabla.classList.contains('fullscreen')) {
-    contenedorTabla.classList.remove('fullscreen');
-    btnCerrarTabla.classList.add('hidden');
-    event.stopPropagation();
-  }
-}
 
 // ----------------------------------------------------
 // Función para mostrar overlay con detalles de cada club
