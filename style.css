@@ -31,15 +31,15 @@ header {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 10vh; /* 10% de la altura del viewport */
+  height: 5vh; /* 10% de la altura del viewport */
   background: linear-gradient(90deg, #e66465, #9198e5);
-  padding: 0 1rem;
+  padding: 0 0.5rem;
 }
 
 #titulo {
   font-weight: 900;
   /* clamp(min, ideal, max) para escalar en móviles: mínimo 2rem, máximo 4rem */
-  font-size: clamp(2rem, 6vw, 4rem);
+  font-size: clamp(1.5rem, 5.5vw, 3.5rem);
   color: transparent;
   background: linear-gradient(90deg, #E91E63, #2C3E50, #2C3E50, #E91E63, #2C3E50, #2C3E50);
   background-size: 400% 400%;
@@ -83,7 +83,7 @@ section {
 
 footer {
   text-align: center;
-  padding: 1em;
+  padding: 0.4em;
   background: #ddd;
 }
 
@@ -341,9 +341,16 @@ footer {
 }
 
 .fondonegro {
-  background: #858585;
+ background: #F4F4F4; 
 }
 
+.fondobeige {
+  background: #D9C6A3;
+}
+
+.fondogris {
+  background: #858585;
+}
 
 
 .noticia-card.visible {
@@ -380,6 +387,11 @@ footer {
 
 .texto-color {
   color: #F8F5F5 !important;
+  font-weight: bold;
+}
+
+.texto-color1 {
+  color: #000000 !important;
   font-weight: bold;
 }
 
@@ -610,7 +622,7 @@ footer {
 .match {
   display: flex;
   flex-direction: column;
-  background: #EBEBEB;
+  background: #FCF7FF;
   border-radius: 12px;
   box-shadow: 0 2px 8px rgba(96, 165, 250, 0.15);
   padding: 8px 12px;
@@ -666,7 +678,7 @@ footer {
   font-weight: 700;
   font-size: 1.4rem;
   color: #111827;
-  background: #E2ECFF;
+  background: #F9E3FF;
   padding: 5px 14px;
   border-radius: 12px;
   min-width: 42px;
@@ -1078,3 +1090,485 @@ footer {
   scrollbar-width: thin;
   scrollbar-color:  #9198e5 transparent;
 }
+
+
+
+
+
+
+
+
+
+
+
+/*supercopa*/
+
+
+
+.scb-titulo {
+  text-align: left;
+  font-family: 'Orbitron', sans-serif;
+  background: linear-gradient(180deg, #0a0014 0%, #15002a 100%);
+  color: #a5f3fc;
+  gap: 0.5rem;
+  padding: 0.5rem;
+
+}
+
+.sbc-titulo-letra {
+  color: #d946ef;
+  padding-left: 2rem;
+  padding: 0rem 1rem;
+
+}
+
+#supercopa-bracket-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0rem;
+    padding: 0rem;
+    font-family: 'Orbitron', sans-serif;
+    background: linear-gradient(180deg, #0a0014 0%, #15002a 100%);
+    color: #a5f3fc;
+  }
+
+  .scb-title {
+    font-size: 1.4rem;
+    font-weight: bold;
+    text-align: center;
+    background: #1c002e;
+    border: 2px solid #d946ef;
+    border-radius: 10px;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.3s ease;
+    color: #e0f2fe;
+  }
+
+  .scb-title:hover {
+    background: #2e0047;
+    transform: scale(1.05);
+  }
+
+  .scb-match-row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+  }
+
+  .scb-semifinal,
+  .scb-final {
+    background: #1f002d;
+    border: 1px solid #d946ef;
+    padding: 1rem;
+    border-radius: 10px;
+    width: 100%;
+    max-width: 300px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .scb-final {
+    max-width: 320px;
+  }
+
+  .scb-team-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .scb-logo-col, .scb-name-col, .scb-score-col {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  .scb-logo {
+    width: 48px;
+    height: 48px;
+    object-fit: contain;
+    filter: drop-shadow(0 0 6px #c084fc);
+  }
+
+  .scb-team-name {
+    font-size: 0.95rem;
+    text-align: center;
+    color: #f0f9ff;
+  }
+
+  .scb-score {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #f9a8d4;
+  }
+
+  .scb-champion {
+    background: #1a0033;
+    border: 2px solid #93c5fd;
+    border-radius: 1rem;
+    padding: 1rem;
+    text-align: center;
+    transition: all 0.5s ease;
+    color: #e0f2fe;
+  }
+
+  .scb-champion.glow {
+    box-shadow: 0 0 30px #c084fc;
+    background: #2a004f;
+  }
+
+  #scb-champion-title.glow {
+    box-shadow: 0 0 20px #c084fc;
+    background: #3b0070;
+  }
+
+  #scb-celebration-btn {
+    background: none;
+    border: none;
+    font-size: 2rem;
+    margin-top: 0.5rem;
+    cursor: pointer;
+    color: #93c5fd;
+    transition: transform 0.3s ease;
+  }
+
+  #scb-celebration-btn:hover {
+    transform: scale(1.3);
+  }
+
+  .scb-card:hover {
+    transform: scale(1.03);
+    box-shadow: 0 0 10px #38bdf8;
+  }
+
+  @media (max-width: 480px) {
+    .scb-team-row {
+      flex-direction: row;
+      justify-content: space-between;
+      gap: 1rem;
+    }
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* COPA */
+
+
+    /* Contenedor principal */
+    .con345xyz {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 0px 8px;
+      width: 100%;
+    }
+
+    /* Título principal */
+    .ttl678abc {
+      text-align: center;
+      margin-bottom: 24px;
+      font-size: 2rem;
+      font-weight: 500;
+      color: #3b007f; /* Magenta oscuro */
+      letter-spacing: 1px;
+    }
+
+    /* Menú de navegación */
+    .nvc901def {
+      display: flex;
+      justify-content: center;
+      gap: 12px; /* Espacio moderado entre botones */
+      flex-wrap: wrap;
+      margin-bottom: 32px;
+      border-bottom: 2px solid rgba(55, 0, 127, 0.2); /* Línea fina en magenta traslúcido */
+    }
+
+    .nvc901def button {
+      background: none;
+      border: none;
+      padding: 8px 16px;
+      font-size: 0.95rem;
+      font-weight: 500;
+      cursor: pointer;
+      transition: color 0.2s, border-bottom-color 0.2s;
+      color: #5a5a5a; /* Gris suave */
+      border-bottom: 3px solid transparent;
+      white-space: nowrap;
+    }
+
+    .nvc901def button:hover {
+      color: #3b007f; /* Magenta oscuro al pasar el ratón */
+    }
+
+    .nvc901def button.act234ghi {
+      color: #0055ff; /* Azul vibrante para el botón activo */
+      border-bottom-color: #0055ff;
+      font-weight: 700;
+    }
+
+    /* Wrapper para tablas con scroll horizontal */
+    .table-wrapper {
+      overflow-x: auto;
+      margin-bottom: 32px;
+      border-radius: 8px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    }
+
+    /* Secciones */
+    .tb {
+      display: none;
+      animation: fadeIn 0.3s ease-in-out;
+      width: 100%;
+    }
+
+    .tb.act234ghi {
+      display: block;
+    }
+
+    /* Estilos de tablas */
+    .tbl {
+      width: 100%;
+      border-collapse: collapse;
+      table-layout: auto;
+      background-color: #ffffff;
+    }
+    .tbl th,
+    .tbl td {
+      border: none;
+      padding: 12px 8px;
+      text-align: center;
+      font-size: 0.9rem;
+      white-space: nowrap;
+      color: #333333;
+    }
+    .tbl thead th {
+      background-color: #f4f0fc; /* Lila muy suave */
+      color: #3b007f; /* Magenta oscuro */
+      font-weight: 500;
+      border-bottom: 2px solid rgba(55, 0, 127, 0.3);
+    }
+    .tbl tbody tr:not(:last-child) {
+      border-bottom: 1px solid #e6e2ed; /* Divisor muy suave entre filas */
+    }
+
+    /* Mantener fija la primera columna */
+    .tbl th:first-child,
+    .tbl td:first-child {
+      position: sticky;
+      left: 0;
+      background-color: #faf7fe; /* Blanco con ligero tinte */
+      z-index: 2;
+    }
+    .tbl thead th {
+      z-index: 3;
+    }
+
+    /* Encabezados de subtítulos de sección */
+    .sec567jkl {
+      font-size: 1.4rem;
+      margin: 16px 0 8px;
+      color: #3b007f;
+      text-align: center;
+      font-weight: 500;
+    }
+
+    /* Hacer que el <h4> sea clicable */
+    .sec567jkl h4 {
+      cursor: pointer;
+      /* Si quieres un ligero efecto hover: */
+      transition: color 0.2s;
+    }
+    .sec567jkl h4:hover {
+      color: #0055ff; /* Azul vibrante al pasar el ratón */
+    }
+
+    /* Animación de aparición */
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(8px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* Responsive: Ajustes para pantallas estrechas */
+    @media (max-width: 600px) {
+      .nvc901def {
+        gap: 8px;
+      }
+      .nvc901def button {
+        padding: 6px 12px;
+        font-size: 0.85rem;
+      }
+      .tbl th,
+      .tbl td {
+        font-size: 0.8rem;
+        padding: 8px 4px;
+      }
+      .tbl th:first-child,
+      .tbl td:first-child {
+        padding-left: 4px;
+        padding-right: 4px;
+      }
+    }
+
+    /* Estilo para el bracket de eliminatorias */
+    .brk890mno {
+      display: flex;
+      flex-direction: column;
+      gap: 32px;
+      margin-top: 24px;
+    }
+    .rnd123pqr {
+      border: 1px solid #e6e2ed;
+      padding: 16px;
+      border-radius: 12px;
+      background-color: #ffffff;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
+    }
+    .rnd123pqr h4 {
+      margin-bottom: 12px;
+      text-align: center;
+      color: #0055ff; /* Azul vibrante */
+      font-weight: 500;
+      font-size: 1.2rem;
+    }
+    .rnd123pqr ul {
+      list-style: none;
+      padding-left: 0;
+    }
+    .rnd123pqr li {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      margin: 8px 0;
+      flex-wrap: nowrap;
+    }
+
+    /* Ajustes para nombres de equipos */
+    .team-name {
+      flex: 1 1 auto;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      font-size: 0.9rem;
+      color: #1a1a1a;
+      font-weight: 500;
+    }
+    .marcador {
+      flex: 0 0 24px;
+      text-align: center;
+      font-weight: 700;
+      color: #3b007f; /* Magenta oscuro */
+    }
+
+    /* Estilo de imagen de escudo */
+    .escudo {
+      width: 28px;
+      height: auto;
+      vertical-align: middle;
+      flex: 0 0 auto;
+      filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.1));
+    }
+
+    /* 1) Convierto la primera celda en contenedor relativo y le doy padding extra */
+.tbl td:first-child {
+  position: relative;
+  /* El padding-left debe ser, al menos:
+     padding-left original (8px) + ancho del escudo (28px) + separación (p. ej. 8px) = 44px */
+  padding-left: 44px; 
+}
+
+/* 2) Pongo el escudo en absoluta dentro de esa celda, pegado al borde izquierdo */
+.tbl td:first-child .escudo {
+  position: absolute;
+  left: 8px;      /* coincide con el padding-left interno original */
+  top: 50%;       /* para centrarlo verticalmente */
+  transform: translateY(-50%);
+}
+
+/* 1) Hago relativo cada <li> de eliminatorias para anidar a los marcadores */
+.rnd123pqr li {
+  position: relative;
+}
+
+/* 2) Primer marcador (marcador del equipo de la izquierda) */
+/*    Lo fijo exactamente en el centro horizontal de la página menos 12px */
+.rnd123pqr li .marcador:first-of-type {
+  position: absolute;
+  left: calc(50vw - 12px);
+  top: 50%;
+  transform: translateY(-50%);
+  /* Si tu marcador mide distinto de ~24px de ancho, ajusta “12px” a la mitad de su anchura */
+}
+
+/* 3) Segundo marcador (marcador del equipo de la derecha) */
+/*    Lo fijo en el centro horizontal de la página más 12px */
+.rnd123pqr li .marcador:last-of-type {
+  position: absolute;
+  left: calc(50vw + 12px);
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+/* 1) Convierte cada <li> de eliminatorias en una rejilla de 6 columnas:
+   - Columna 1: escudo izquierdo (auto)
+   - Columna 2: nombre equipo izquierdo (1fr)
+   - Columna 3: marcador local (24px fijo)
+   - Columna 4: marcador visitante (24px fijo)
+   - Columna 5: nombre equipo derecho (1fr)
+   - Columna 6: escudo derecho (auto) */
+.rnd123pqr li {
+  display: grid;
+  grid-template-columns: auto 1fr 24px 24px 1fr auto;
+  align-items: center;       /* Centra verticalmente todo el contenido */
+  gap: 0;                    /* Anula cualquier separación de flex previa */
+  /* Anulamos las reglas de flexbox que pudiera haber heredado */
+  justify-content: initial;
+  flex-wrap: initial;
+}
+
+/* 2) Ajusta el comportamiento de .team-name para que el nombre derecho se alinee a la derecha */
+.rnd123pqr li .team-name:last-of-type {
+  justify-self: end;
+}
+
+/* 3) Nos aseguramos de que los .marcador ocupen justo las columnas centrales
+   y queden siempre a 50% del ancho del contenedor padre (.rnd123pqr), es decir, en el eje horizontal fijo */
+.rnd123pqr li .marcador {
+  /* Ya tienen 24px de ancho gracias al grid-template-columns */
+  text-align: center;
+}
+
+/* 4) (Opcional) Si quieres que esos dos marcadores queden siempre pegados entre sí,
+   reduce el gap entre ellos a 0. Ya lo hace el grid por columnas fijas, así que no hace falta más. */
+
+/* 5) Por último, anulamos cualquier flex: del .team-name interior para que no interfiera */
+.rnd123pqr li .team-name {
+  flex: none;
+}
+  </style>
