@@ -85,7 +85,7 @@
               <div class="noticia-card fondonegro" >
                 <span class="noticia-fecha">20 mayo 2025</span>
                 <h3>CAMISETA OFICIAL 23/24</h3>
-                <img src="imagenes/camiseta1.PNG" alt="Reunión" loading="lazy" />
+                <img src="imagenes/camiseta1.png" alt="Reunión" loading="lazy" />
                 <p class="texto-color1">
                    Ya tenemos camiseta oficial de la temporada 2023-2024.<br> Todo gracias a nuestro increible equipo de diseñadores que logran una vez mas un diseño elegante y moderno. 
                 </p>
@@ -2279,6 +2279,29 @@
       ============================================================= -->
 
 <section id="crew" class="hidden">
+
+  <!-- Introducción animada con imágenes y audio -->
+<div id="intro-crew">
+  <!-- Botón de reproducción -->
+  <button id="boton-reproduccion" style="display: none;">▶️ Reproducir audio & comenzar</button>
+
+  <!-- Audio -->
+  <audio id="pista-audio" src="imagenes/gta.mp3" preload="auto"></audio>
+
+  <!-- Imágenes animadas -->
+  <div class="contenedor-rocas" id="contenedor-principal">
+    <img src="imagenes/introcrewmedina.png" class="imagen-rocas" id="primera-imagen" alt="Imagen 1" />
+    <img src="imagenes/intocrewyate.png" class="imagen-rocas imagen-secundaria" id="segunda-imagen" alt="Imagen 2" />
+    <img src="imagenes/introcrewgrupo.png" class="imagen-rocas" id="tercera-imagen" alt="Imagen 3" />
+  </div>
+
+  <!-- Overlay de carga -->
+  <div class="overlay-cargando" id="overlay-carga">
+    Loading Please Wait...
+    <div class="animacion-cargando"></div>
+  </div>
+</div>
+<div class="main-crew" style="display: none;">
   <article class="headerCrew">
     <div class="logo">Crew</div>
     <button class="menu-toggle" id="menuBtn" aria-label="Abrir menú">☰</button>
@@ -2358,6 +2381,8 @@
     <p class="letrapresis">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque rutrum justo vitae lorem.</p>
     <img src="imagenes/vive.jpeg" alt="Imagen Presidente I 2" />
   </article>
+</div>
+
 </section>
 
       <!-- ======================
@@ -2385,7 +2410,7 @@
         />
       </button>
       <!-- BOTÓN CREW -->
-      <button onclick="goTo('crew')" aria-label="Crew">
+     <button onclick="goToCrew()" aria-label="Crew">
         <img
           src="imagenes/crew.png"
           alt="Crew"
@@ -2442,7 +2467,7 @@
 <script>
   const scbInitialVisibility = {
     semifinales: true,  // Cambia a true si quieres mostrarla por defecto
-    final: false,
+    final: true,
     campeon: false
   };
 
@@ -2510,5 +2535,55 @@
       });
     });
   </script>
+  <script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const images = [
+      document.getElementById('primera-imagen'),
+      document.getElementById('segunda-imagen'),
+      document.getElementById('tercera-imagen')
+    ];
+    const audio = document.getElementById('pista-audio');
+    const playButton = document.getElementById('boton-reproduccion');
+    const loadingOverlay = document.getElementById('overlay-carga');
+    const contenedor = document.getElementById('contenedor-principal');
+    const introWrapper = document.getElementById('intro-crew');
+    const DISPLAY_TIME = 5000;
+
+    function startSequence() {
+      images[0].classList.add('active');
+
+      setTimeout(() => {
+        images[0].classList.remove('active');
+        images[1].classList.add('active');
+
+        setTimeout(() => {
+          images[1].classList.remove('active');
+          images[2].classList.add('active');
+
+          setTimeout(() => {
+            images[2].classList.remove('active');
+            audio.pause();
+            audio.currentTime = 0;
+            loadingOverlay.style.display = 'none';
+            contenedor.style.display = 'none';
+            introWrapper.style.display = 'none'; // Oculta toda la intro
+          }, DISPLAY_TIME);
+
+        }, DISPLAY_TIME);
+
+      }, DISPLAY_TIME);
+    }
+
+    playButton.addEventListener('click', () => {
+      loadingOverlay.style.display = 'flex';
+      audio.currentTime = 0;
+      audio.play().catch(() => {
+        console.warn('El navegador bloqueó la reproducción de audio.');
+      });
+      setTimeout(startSequence, 50);
+      playButton.style.display = 'none';
+    });
+  });
+</script>
   </body>
 </html>
