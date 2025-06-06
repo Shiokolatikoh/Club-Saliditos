@@ -227,7 +227,8 @@ function renderMainFloatingMenu() {
     <button id="btnCompeticiones" aria-label="Competiciones">
       <img src="imagenes/competiciones.png" alt="Competiciones" style="width: 45px; height: 45px;" />
     </button>
-    <button onclick="goTo('crew')" aria-label="Crew">
+    <!-- Aquí cambiamos goTo('crew') por goToCrew() -->
+    <button onclick="goToCrew()" aria-label="Crew">
       <img src="imagenes/crew.png" alt="Crew" style="width: 45px; height: 45px;" />
     </button>
   `;
@@ -237,6 +238,7 @@ function renderMainFloatingMenu() {
     btnComp.addEventListener('click', showCompetitionsMenu);
   }
 }
+
 
 // ----------------------------------------------------
 // 7. NAVEGACIÓN DESDE BURBUJAS Y OCULTAR MENÚ FLOTANTE
@@ -251,6 +253,116 @@ function goTo(id) {
     destino.classList.remove('hidden');
     destino.classList.add('visible');
   }
+  const menu = document.getElementById('menuFlotante');
+  if (menu) {
+    menu.classList.add('hidden');
+  }
+}
+
+
+
+
+
+
+
+  function goToCrew() {
+  // ───> 1) Forzar scroll arriba y bloquearlo:
+  window.scrollTo(0, 0);
+  document.documentElement.classList.add("no-scroll");
+  document.body.classList.add("no-scroll");
+
+  const destino = document.getElementById("crew");
+  const introWrapper = document.getElementById("intro-crew");
+  const contenedor = document.getElementById("contenedor-principal");
+  const audio = document.getElementById("pista-audio");
+  const loadingOverlay = document.getElementById("overlay-carga");
+  const playButton = document.getElementById("boton-reproduccion");
+
+  // Ocultar todas las secciones primero
+  document.querySelectorAll("main > section").forEach((sec) => {
+    sec.classList.add("hidden");
+    sec.classList.remove("visible");
+  });
+
+  // Mostrar la sección de crew
+  destino.classList.remove("hidden");
+  destino.classList.add("visible");
+
+  // Ocultar la burbuja y el menú flotante al empezar la intro
+  const burbuja = document.querySelector(".burbuja-conejo");
+  if (burbuja) {
+    burbuja.style.display = "none";         // ← ocultamos la burbuja
+  }
+  const menuFlot = document.getElementById("menuFlotante");
+  if (menuFlot) {
+    menuFlot.classList.add("hidden");        // ← ocultamos el menú flotante
+  }
+
+  // Mostrar intro y contenedor
+  introWrapper.style.display = "block";
+  contenedor.style.display = "flex";
+  loadingOverlay.style.display = "flex";
+  playButton.style.display = "none"; // no queremos que el usuario tenga que volver a hacer clic
+
+  // Reproducir audio
+  audio.currentTime = 0;
+  audio.play().catch(() => {
+    console.warn("El navegador bloqueó la reproducción de audio.");
+  });
+
+  // Activar la animación de imágenes
+  const images = [
+    document.getElementById("primera-imagen"),
+    document.getElementById("segunda-imagen"),
+    document.getElementById("tercera-imagen"),
+  ];
+
+  const DISPLAY_TIME = 5000;
+
+  function startSequence() {
+    images[0].classList.add("active");
+
+    setTimeout(() => {
+      images[0].classList.remove("active");
+      images[1].classList.add("active");
+
+      setTimeout(() => {
+        images[1].classList.remove("active");
+        images[2].classList.add("active");
+
+        setTimeout(() => {
+          // ───> 2) Fin de la intro: desbloquear scroll y mostrar main-crew
+          images[2].classList.remove("active");
+          audio.pause();
+          audio.currentTime = 0;
+          loadingOverlay.style.display = "none";
+          contenedor.style.display = "none";
+          introWrapper.style.display = "none";
+
+          // *QUITAMOS* la clase no-scroll para que se pueda volver a desplazar:
+          document.documentElement.classList.remove("no-scroll");
+          document.body.classList.remove("no-scroll");
+
+          // Mostrar el contenido real de la sección después de la intro
+          document.querySelector(".main-crew").style.display = "block";
+
+          // Volvemos a mostrar la burbuja y el menú flotante
+          if (burbuja) {
+            burbuja.style.display = "flex";    // ← volvemos a mostrar la burbuja
+          }
+          if (menuFlot) {
+            menuFlot.classList.remove("hidden"); // ← volvemos a mostrar el menú flotante
+          }
+        }, DISPLAY_TIME);
+      }, DISPLAY_TIME);
+    }, DISPLAY_TIME);
+  }
+
+  setTimeout(startSequence, 50);
+
+  
+  
+  // Ocultar menú flotante si existe
   const menu = document.getElementById('menuFlotante');
   if (menu) {
     menu.classList.add('hidden');
