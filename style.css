@@ -863,8 +863,8 @@ footer {
 }
 .overlay-cargando {
   position: fixed;
-  right: 15vw;
-  bottom: 12vh;
+  right: 30vw;
+  bottom: 18vh;
   background-color: rgba(0, 0, 0, 0.7);
   border-radius: 8px;
   padding: 16px 28px;
