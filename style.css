@@ -792,6 +792,108 @@ footer {
 
 
 //* Contenedor principal */
+
+
+
+#intro-crew {
+  background-color: var(--bg-color);
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  position: relative;
+  z-index: 999;
+}
+#boton-reproduccion {
+  position: fixed;
+  bottom: 3vh;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: rgba(255, 255, 255, 0.1);
+  color: #fff;
+  border: 2px solid #fff;
+  border-radius: 4px;
+  padding: 12px 24px;
+  font-size: 1rem;
+  cursor: pointer;
+  z-index: 100;
+  transition: background-color 0.3s ease;
+}
+#boton-reproduccion:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+.contenedor-rocas {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+.imagen-rocas {
+  position: absolute;
+  max-height: 100vh;
+  width: auto;
+  height: 90vh;
+  opacity: 0;
+  transform: scale(1);
+  transition: opacity 3s ease, transform 7s ease;
+  object-fit: cover;
+  will-change: transform, opacity;
+}
+.imagen-rocas:not(.imagen-secundaria) {
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(1);
+}
+.imagen-rocas:not(.imagen-secundaria).active {
+  opacity: 1;
+  transform: translate(-50%, -50%) scale(1.1) translateY(-1%);
+}
+.imagen-rocas.imagen-secundaria {
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  transform: translateX(-5%) scale(1);
+}
+.imagen-rocas.imagen-secundaria.active {
+  opacity: 1;
+  transform: translateX(0) scale(1.05);
+}
+.overlay-cargando {
+  position: fixed;
+  right: 15vw;
+  bottom: 12vh;
+  background-color: rgba(0, 0, 0, 0.7);
+  border-radius: 8px;
+  padding: 16px 28px;
+  display: none;
+  align-items: center;
+  color: white;
+  z-index: 10;
+  font-size: 1.1rem;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
+}
+.animacion-cargando {
+  width: 28px;
+  height: 28px;
+  margin-left: 12px;
+  border-radius: 50%;
+  border: 4px solid white;
+  border-top-color: transparent;
+  animation: spin 1s linear infinite;
+}
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+
+
+
+
 #crew {
   background-color: #000;
   color: #fff;
@@ -1062,6 +1164,17 @@ footer {
   }
 }
 
+
+
+
+/* ------------------------------------------------
+   Clase “no-scroll” para bloquear el scroll
+   ------------------------------------------------ */
+html.no-scroll,
+body.no-scroll {
+  overflow: hidden !important;
+  height: 100vh; /* evita “rebounding” en algunos móviles */
+}
 
 
 /* SCROLLBAR MODERNA */
