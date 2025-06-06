@@ -267,7 +267,7 @@ function goTo(id) {
 
   function goToCrew() {
   // ───> 1) Forzar scroll arriba y bloquearlo:
-  window.scrollTo(0, 50);
+  window.scrollTo(0, 0);
   document.documentElement.classList.add("no-scroll");
   document.body.classList.add("no-scroll");
 
