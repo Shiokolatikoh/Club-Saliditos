@@ -222,14 +222,14 @@ function renderMainFloatingMenu() {
   // Restaurar el menú principal con las tres burbujas
   menu.innerHTML = `
     <button onclick="goTo('inicio')" aria-label="Inicio">
-      <img src="imagenes/inicio.png" alt="Inicio" style="width: 45px; height: 45px;" />
+      <img src="imagenes/casa-moderna.png" alt="Inicio" style="width: 50px; height: 50px;" />
     </button>
     <button id="btnCompeticiones" aria-label="Competiciones">
-      <img src="imagenes/competiciones.png" alt="Competiciones" style="width: 45px; height: 45px;" />
+      <img src="imagenes/menu-compe.png" alt="Competiciones" style="width: 60px; height: 60px;" />
     </button>
     <!-- Aquí cambiamos goTo('crew') por goToCrew() -->
     <button onclick="goToCrew()" aria-label="Crew">
-      <img src="imagenes/crew.png" alt="Crew" style="width: 45px; height: 45px;" />
+      <img src="imagenes/srsg.png" alt="Crew" style="width: 45px; height: 45px;" />
     </button>
   `;
   // Reasignar listener al botón de competiciones
@@ -369,20 +369,6 @@ function goTo(id) {
   }
 }
 
-// ----------------------------------------------------
-// 8. AJUSTAR ALTURA DE CADA NOTICIA-SLIDE PARA SCROLL-SNAP
-// ----------------------------------------------------
-// La función se desactiva porque ya no necesitamos height:100vh en CSS
-// function ajustarAlturaSlides() {
-//  const vh = window.innerHeight;
-//  document.querySelectorAll('.noticia-slide').forEach((slide) => {
-//    slide.style.height = `${vh}px`;
-//  });
-//  const contenedor = document.getElementById('carruselNoticias');
-//  if (contenedor) {
-//    contenedor.style.height = `${vh}px`;
-//  }
-//}
 
 // ----------------------------------------------------
 // 9. ANIMACIÓN CON INTERSECTIONOBSERVER PARA NOTICIA-CARD
