@@ -19,8 +19,6 @@ const ligaSections = ['jornadas', 'clasificacion'];
 // Variables para swipe detection en 'liga'
 let touchStartX_Liga = 0;
 let touchStartY_Liga = 0;
-
-// ----------------------------------------------------
 // 3. FUNCIONES PARA MOSTRAR SUBSECCIONES DE “INICIO”
 // ----------------------------------------------------
 function showSubsectionByIndex(index) {
@@ -28,6 +26,8 @@ function showSubsectionByIndex(index) {
   if (index < 0 || index >= subSections.length) return;
   currentSubIndex = index;
 
+
+// ----------------------------------------------------
   // Ocultar todas las subsecciones y desactivar botones
   subSections.forEach((s) => {
     s.classList.remove('visible');
@@ -222,14 +222,14 @@ function renderMainFloatingMenu() {
   // Restaurar el menú principal con las tres burbujas
   menu.innerHTML = `
     <button onclick="goTo('inicio')" aria-label="Inicio">
-      <img src="imagenes/casa-moderna.png" alt="Inicio" style="width: 50px; height: 50px;" />
+      <img src="imagenes/menu-flotante-casa.png" alt="Inicio" style="width: 50px; height: 50px;" />
     </button>
     <button id="btnCompeticiones" aria-label="Competiciones">
-      <img src="imagenes/menu-compe.png" alt="Competiciones" style="width: 60px; height: 60px;" />
+      <img src="imagenes/menu-flotante-balon.png" alt="Competiciones" style="width: 60px; height: 60px;" />
     </button>
     <!-- Aquí cambiamos goTo('crew') por goToCrew() -->
     <button onclick="goToCrew()" aria-label="Crew">
-      <img src="imagenes/srsg.png" alt="Crew" style="width: 45px; height: 45px;" />
+      <img src="imagenes/menu-flotante-crew.png" alt="Crew" style="width: 45px; height: 45px;" />
     </button>
   `;
   // Reasignar listener al botón de competiciones
